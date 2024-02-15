@@ -8,9 +8,9 @@ const Menu = () => {
       </div>
 
       <div className="Menu">
-        <button class="custom-btn btn-1">2 Player</button>
-        <button class="custom-btn btn-1">3 Player</button>
-        <button class="custom-btn btn-1">4 Player up</button>
+        <button class="pixel2">2 Player</button>
+        <button class="pixel2">3 Player</button>
+        <button class="pixel2">4 Player up</button>
       </div>
     </div>
   );
