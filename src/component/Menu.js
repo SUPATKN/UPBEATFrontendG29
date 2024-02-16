@@ -1,5 +1,10 @@
 import { useState } from "react";
+import Button from "./button";
 const Menu = () => {
+  const [Title, setTitle] = useState([
+    { title: "2 Player", id: 1 },
+    { title: "3 Player", id: 2 },
+  ]);
   return (
     <div>
       <div>
@@ -8,9 +13,7 @@ const Menu = () => {
       </div>
 
       <div className="Menu">
-        <button class="pixel2">2 Player</button>
-        <button class="pixel2">3 Player</button>
-        <button class="pixel2">4 Player up</button>
+        <Button Title={Title} />
       </div>
     </div>
   );
