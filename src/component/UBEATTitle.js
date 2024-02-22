@@ -1,4 +1,4 @@
-const Gameplay = () => {
+const UBEATTitle = () => {
   return (
     <div>
       <div className="UpbeatTitle">UPBEAT</div>
@@ -7,4 +7,4 @@ const Gameplay = () => {
   );
 };
 
-export default Gameplay;
+export default UBEATTitle;

@@ -1,19 +1,22 @@
 import { useState } from "react";
 import Button from "./button";
+import UBEATTitle from "./UBEATTitle";
+import { useNavigate } from "react-router-dom";
 const Menu = () => {
-  const [Title, setTitle] = useState([
-    { title: "2 Player", id: 1 },
-    { title: "3 Player", id: 2 },
-  ]);
+  const navigate = useNavigate();
+
+  const handleButtonClick = (numberOfPlayers) => {
+    navigate(`/Lobby/${numberOfPlayers}`);
+  };
   return (
-    <div>
+    <div className="MenuBackground">
       <div>
-        <div className="UpbeatTitle">UPBEAT</div>
-        <div className="UpbeatTitleDis">Project from group 29</div>
+        <UBEATTitle />
       </div>
 
       <div className="Menu">
-        <Button Title={Title} />
+        <Button Title="2 Player" handleClick={() => handleButtonClick(2)} />
+        <Button Title="3 Player" handleClick={() => handleButtonClick(3)} />
       </div>
     </div>
   );

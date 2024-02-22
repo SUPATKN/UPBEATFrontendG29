@@ -1,14 +1,14 @@
-const button = (props) => {
-  const AllButton = props.Title;
+const Button = ({ Title, handleClick, Ready }) => {
   return (
     <div>
-      {AllButton.map((AllButton) => (
-        <button className="pixel2" key={AllButton.id}>
-          {AllButton.title}
-        </button>
-      ))}
+      <button
+        className={Title === "Start Game" && !Ready ? "pixel2Start" : "pixel2"}
+        onClick={handleClick}
+      >
+        {Title}
+      </button>
     </div>
   );
 };
 
-export default button;
+export default Button;
