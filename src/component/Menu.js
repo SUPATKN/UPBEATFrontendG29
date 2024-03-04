@@ -8,9 +8,8 @@ const Menu = () => {
   const navigate = useNavigate();
   const [num, setNum] = useState(0);
 
-  const handleButtonClick = (numberOfPlayers) => {
+  const handleButtonClick = () => {
     setMenuClick(true);
-    setNum(numberOfPlayers);
   };
   return (
     <div className="MenuBackground">
@@ -19,11 +18,10 @@ const Menu = () => {
       </div>
 
       <div className={menuClick ? "Hidden" : "Menu"}>
-        <Button Title="2 Player" handleClick={() => handleButtonClick(2)} />
-        <Button Title="3 Player" handleClick={() => handleButtonClick(3)} />
+        <Button Title="Play Game" handleClick={handleButtonClick} />
       </div>
       <div className={!menuClick ? "Hidden" : "Box"}>
-        <Box numberOfPlayers={num} />
+        <Box />
       </div>
     </div>
   );

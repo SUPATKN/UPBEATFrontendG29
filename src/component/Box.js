@@ -3,7 +3,7 @@ import SockJS from "sockjs-client";
 import Stomp from "stompjs";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-const Box = ({ numberOfPlayers }) => {
+const Box = () => {
   const navigate = useNavigate();
   const [name, setName] = useState("");
 
@@ -13,9 +13,13 @@ const Box = ({ numberOfPlayers }) => {
       const playerName = { name: name };
 
       // ส่งชื่อผู้เล่นไปยัง backend โดยใช้ HTTP POST request
-      const response = await axios.post("http://localhost:8080/player", name, {
-        headers: { "Content-Type": "application/json" },
-      });
+      const response = await axios.put(
+        "http://localhost:8080/addplayer",
+        name,
+        {
+          headers: { "Content-Type": "application/json" },
+        }
+      );
 
       // หากสำเร็จ จะทำตามขั้นตอนที่ต้องการ เช่น นำผู้เล่นไปยังหน้าต่อไป
       console.log("Player added:", response.data);

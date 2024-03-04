@@ -3,7 +3,7 @@
 .MenuBackground {
   width: 100vw; /* Full width of the viewport */
   height: 100vh; /* Full height of the viewport */
-  background-image: url(/src/Image/hytale-rpg-video-games-hd-wallpaper-preview.jpg);
+  background-image: url(/src/Image/3ff9a7dcaebf98747d072c1bd6868479.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -15,7 +15,7 @@
 .LobbyBackground {
   width: 100vw; /* Full width of the viewport */
   height: 100vh; /* Full height of the viewport */
-  background-image: url(/src/Image/95690-3000x1818-ragnarok-online-background-image-desktop-hd.jpg);
+  background-image: url(/src/Image/Untitled.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -27,13 +27,13 @@
 .Select {
   margin-top: 7%;
   justify-content: center;
-
+  column-gap: 50px;
   display: flex; /* Change inline-flex to flex */
+  flex-wrap: wrap;
 }
 .PlayerImage {
-  width: 350px;
-  height: 420px;
-  margin-right: 5%;
+  width: 250px;
+  height: 320px;
   border: #000000 solid;
   border-radius: 60px;
   border-color: white;
@@ -48,26 +48,26 @@
   margin-top: 10%;
 
   display: flex;
-  margin-left: 42%;
+  justify-content: center;
 }
 
 .Unready {
-  width: 350px;
-  height: 420px;
+  width: 250px;
+  height: 320px;
   background-color: #000000;
   border-radius: 60px;
   opacity: 70%;
 }
 .Ready {
-  width: 350px;
-  height: 420px;
+  width: 250px;
+  height: 320px;
   background-color: #000000;
   border-radius: 60px;
   opacity: 0%;
 }
 .ReadyButton {
-  margin-left: 20%;
-  margin-top: 5%;
+  justify-content: center;
+  margin-left: 15px;
 }
 .Menu {
   width: 200px;
@@ -110,6 +110,10 @@
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+}
+
+.font {
+  font-family: "Public Pixel", sans-serif;
 }
 
 .pixel,
