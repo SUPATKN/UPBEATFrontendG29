@@ -9,8 +9,6 @@ const PlayerLobby = ({
   Username,
 }) => {
   let isReady = playerReady;
-  console.log(playerName);
-  console.log(Username);
   const [Isme, setIsme] = useState(false);
 
   const handleClick = () => {
@@ -26,8 +24,6 @@ const PlayerLobby = ({
       setIsme(false);
     }
   });
-  console.log(Username);
-  console.log(Isme);
   return (
     <div className={Isme ? "PlayerImageMe" : "PlayerImage"}>
       <div className={isReady ? "Ready" : "Unready"}></div>
@@ -39,6 +35,7 @@ const PlayerLobby = ({
           Title={isReady ? "Unready" : "Ready"}
           handleClick={handleClick}
           Ready={isReady}
+          isMe={Isme}
         />
       </div>
     </div>

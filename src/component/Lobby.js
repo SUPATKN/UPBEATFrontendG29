@@ -11,8 +11,7 @@ const Lobby = () => {
   const navigate = useNavigate();
   const [allPlayersReady, setAllPlayersReady] = useState(false);
   const [allPlayers, setAllPlayers] = useState([]);
-  // Function to track readiness of each player
-  const [playerReadiness, setPlayerReadiness] = useState([]);
+  const [isHost, setHost] = useState(false);
   const name = useParams();
   console.log(name["playername"]);
 
@@ -37,9 +36,21 @@ const Lobby = () => {
     client.connect({}, () => {
       client.subscribe("/topic/gameState", () => fetchAllPlayers());
       client.subscribe("/topic/ready", () => fetchAllPlayers());
+      client.subscribe("/topic/Allready", () => CheckAllReady());
     });
     fetchAllPlayers();
+    findHost();
   }, []);
+
+  const CheckAllReady = async () => {
+    const response = await axios.get("http://localhost:8080/allReady", {
+      headers: {
+        "Access-Control-Allow-Origin": "*", // กำหนดค่า Access-Control-Allow-Origin
+      },
+    });
+    console.log(response.data);
+    setAllPlayersReady(response.data);
+  };
 
   // Function to handle player readiness
   const handlePlayerReady = async (index) => {
@@ -53,9 +64,24 @@ const Lobby = () => {
       console.error("Error setting player ready:", error);
     }
   };
+  useEffect(() => {
+    findHost();
+  });
+
+  const findHost = () => {
+    const hostPlayer = allPlayers.find((player) => player.host === true);
+    console.log("host ", hostPlayer);
+    if (hostPlayer && hostPlayer.name === name["playername"]) {
+      console.log("This player is the host");
+      setHost(true);
+    } else {
+      console.log("This player is not the host");
+      setHost(false);
+    }
+  };
 
   const startGame = () => {
-    if (allPlayersReady) {
+    if (allPlayersReady && isHost) {
       navigate("/");
     }
   };
