@@ -37,9 +37,9 @@ const Lobby = () => {
       client.subscribe("/topic/gameState", () => fetchAllPlayers());
       client.subscribe("/topic/ready", () => fetchAllPlayers());
       client.subscribe("/topic/Allready", () => CheckAllReady());
+      client.subscribe("/topic/startgame", () => GoGameplay());
     });
     fetchAllPlayers();
-    findHost();
   }, []);
 
   const CheckAllReady = async () => {
@@ -57,7 +57,7 @@ const Lobby = () => {
     try {
       const player = allPlayers[index];
       console.log(player.name);
-      await axios.post("http://localhost:8080/Ready", player.name, {
+      await axios.put("http://localhost:8080/Ready", player.name, {
         headers: { "Content-Type": "application/json" },
       });
     } catch (error) {
@@ -79,10 +79,20 @@ const Lobby = () => {
       setHost(false);
     }
   };
+  const GoGameplay = () => {
+    navigate(`/Gameplay/${name["playername"]}`);
+  };
 
-  const startGame = () => {
+  const startGame = async () => {
     if (allPlayersReady && isHost) {
-      navigate("/");
+      try {
+        await axios.post("http://localhost:8080/gamestart", name, {
+          headers: { "Content-Type": "application/json" },
+        });
+      } catch (error) {
+        console.error("Error adding player:", error);
+      }
+      GoGameplay();
     }
   };
 

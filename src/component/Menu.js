@@ -5,8 +5,6 @@ import { useNavigate } from "react-router-dom";
 import Box from "./Box";
 const Menu = () => {
   const [menuClick, setMenuClick] = useState(false);
-  const navigate = useNavigate();
-  const [num, setNum] = useState(0);
 
   const handleButtonClick = () => {
     setMenuClick(true);
