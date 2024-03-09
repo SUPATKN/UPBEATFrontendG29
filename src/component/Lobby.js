@@ -13,6 +13,8 @@ const Lobby = () => {
   const [allPlayers, setAllPlayers] = useState([]);
   // Function to track readiness of each player
   const [playerReadiness, setPlayerReadiness] = useState([]);
+  const name = useParams();
+  console.log(name["playername"]);
 
   const fetchAllPlayers = async () => {
     try {
@@ -37,7 +39,6 @@ const Lobby = () => {
       client.subscribe("/topic/ready", () => fetchAllPlayers());
     });
     fetchAllPlayers();
-    console.log(playerReadiness);
   }, []);
 
   // Function to handle player readiness
@@ -53,10 +54,6 @@ const Lobby = () => {
     }
   };
 
-  const CheckAllPlayerReady = () => {
-    setPlayerReadiness(new Array(allPlayers.length).fill(allPlayers.ready));
-  };
-
   const startGame = () => {
     if (allPlayersReady) {
       navigate("/");
@@ -66,15 +63,21 @@ const Lobby = () => {
   return (
     <div className="LobbyBackground">
       <div className="Select">
-        {/* Map each player and render PlayerLobby */}
-        {allPlayers.map((player, index) => (
-          <PlayerLobby
-            key={index}
-            playerName={player.name}
-            handlePlayerReady={() => handlePlayerReady(index)}
-            playerReady={player.ready}
-          />
-        ))}
+        {allPlayers
+          .sort((a, b) => {
+            if (a.name === name["playername"]) return -1; // ถ้าชื่อของผู้เล่นเป็น name["playername"] ให้อยู่ด้านหน้า
+            if (b.name === name["playername"]) return 1; // ถ้าชื่อของผู้เล่นเป็น name["playername"] ให้อยู่ด้านหน้า
+            return 0;
+          })
+          .map((player, index) => (
+            <PlayerLobby
+              key={index}
+              playerName={player.name}
+              handlePlayerReady={() => handlePlayerReady(index)}
+              playerReady={player.ready}
+              Username={name["playername"]}
+            />
+          ))}
       </div>
       <div className="StartGame">
         <Button

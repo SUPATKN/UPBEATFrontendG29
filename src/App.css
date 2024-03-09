@@ -31,6 +31,12 @@
   display: flex; /* Change inline-flex to flex */
   flex-wrap: wrap;
 }
+.PlayerLobby {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
 .PlayerImage {
   width: 250px;
   height: 320px;
@@ -44,6 +50,21 @@
   background-size: 170%;
   background-repeat: no-repeat;
 }
+.PlayerImageMe {
+  width: 250px;
+  height: 320px;
+  border: #000000 solid;
+  border-radius: 60px;
+  border-color: rgb(0, 255, 145);
+  border-width: 6px;
+  background-color: rgb(213, 1, 1);
+  background-image: url(/src/Image/54012268766885.5b68cd4e27dcf.png);
+  background-position: center;
+  background-size: 170%;
+  background-repeat: no-repeat;
+}
+
+
 .StartGame {
   margin-top: 10%;
 

@@ -11,7 +11,7 @@ const App = () => {
         <Routes>
           <Route exact path="/" element={<Menu />} />
           <Route path="/Lobby" element={<Lobby />} />
-          <Route path="/Lobby/:numberOfPlayers" element={<Lobby />} />
+          <Route path="/Lobby/:playername" element={<Lobby />} />
         </Routes>
       </div>
     </BrowserRouter>
