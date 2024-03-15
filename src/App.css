@@ -24,6 +24,77 @@
   top: 0;
   left: 0;
 }
+.GameplayBackground {
+  width: 100vw; /* Full width of the viewport */
+  height: 100vh; /* Full height of the viewport */
+  background-image: url(/src/Image/3eb349e2eeecd92398b69ba585f6470a.jpg);
+  background-size: 100px;
+  background-repeat: repeat;
+  background-position: center;
+  background-attachment: fixed;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.GameplayBorder {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 10px solid rgba(212, 212, 212, 0);
+  box-sizing: border-box; /* จัดการให้ขนาดความกว้างและความสูงของขอบนับรวมขอบด้วย */
+  box-shadow: inset 0 0 20px 11px rgba(0, 0, 0, 0.5);
+  background-clip: padding-box;
+  background-image: url(/src/Image/125906483-pixel-art-background-vector-illustration-abstract-square-pixel-pattern-mosaic-background.jpg);
+  background-size: 200px;
+  background-repeat: repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+.hexagon-col {
+  margin-left: -2.4%;
+}
+.hexagon-col-odd {
+  margin-top: 4.27%;
+  margin-left: -2.4%;
+}
+.hexagon-col-container {
+  display: inline-block;
+  margin-left: 200px;
+  margin-top: 5%;
+}
+
+.hexagon-row {
+  display: flex;
+  margin-top: -8.5%;
+}
+
+.hexagon {
+  position: relative;
+  margin-left: -4.5%;
+  margin-top: 0%;
+  width: 120px;
+  height: 104px;
+  background-image: url(/src/Image/hqdefault.jpg);
+  background-size: 200px;
+  background-position: center;
+  clip-path: polygon(0% 50%, 25% 100%, 75% 100%, 100% 50%, 75% 0%, 25% 0%);
+  box-shadow: inset 0 0 20px 7px rgba(0, 0, 0, 0.5);
+}
+.hexagon-even {
+  position: relative;
+  margin-top: 8.7%;
+  margin-left: -4.5%;
+  width: 120px;
+  height: 104px;
+  background-image: url(/src/Image/hqdefault.jpg);
+  background-size: 200px;
+  background-position: center;
+  clip-path: polygon(0% 50%, 25% 100%, 75% 100%, 100% 50%, 75% 0%, 25% 0%);
+  box-shadow: inset 0 0 20px 7px rgba(0, 0, 0, 0.5);
+}
+
 .Select {
   margin-top: 7%;
   justify-content: center;
@@ -64,7 +135,6 @@
   background-repeat: no-repeat;
 }
 
-
 .StartGame {
   margin-top: 10%;
 
@@ -90,6 +160,37 @@
   justify-content: center;
   margin-left: 15px;
 }
+.image-container {
+  position: relative;
+  width: 70px;
+  height: 70px;
+}
+
+.image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/* กำหนดภาพของ City Center มีลำดับความสำคัญสูงกว่าภาพของ Crew */
+.hexagon-even .image-container img:first-child {
+  z-index: 0;
+}
+
+/* กำหนดภาพของ Crew มีลำดับความสำคัญต่ำกว่าภาพของ City Center */
+.hexagon-even .image-container img:last-child {
+  z-index: 1;
+}
+
+.hexagon .image-container img:first-child {
+  z-index: 0;
+}
+
+/* กำหนดภาพของ Crew มีลำดับความสำคัญต่ำกว่าภาพของ City Center */
+.hexagon .image-container img:last-child {
+  z-index: 1;
+}
+
 .Menu {
   width: 200px;
   margin-top: 30px;
