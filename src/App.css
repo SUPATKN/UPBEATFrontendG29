@@ -13,8 +13,8 @@
   left: 0;
 }
 .LobbyBackground {
-  width: 100vw; /* Full width of the viewport */
-  height: 100vh; /* Full height of the viewport */
+  width: 800px; /* Full width of the viewport */
+  height: 600px; /* Full height of the viewport */
   background-image: url(/src/Image/Untitled.png);
   background-size: cover;
   background-repeat: no-repeat;
@@ -25,13 +25,13 @@
   left: 0;
 }
 .GameplayBackground {
-  width: 100vw; /* Full width of the viewport */
-  height: 100vh; /* Full height of the viewport */
+  width: 100%; /* เปลี่ยนเป็น 100% ของ viewport */
+  height: 100%; /* เปลี่ยนเป็น 100% ของ viewport */
   background-image: url(/src/Image/3eb349e2eeecd92398b69ba585f6470a.jpg);
-  background-size: 100px;
+  background-size: cover; /* ขยายพื้นหลังเต็มพื้นที่ของ viewport */
   background-repeat: repeat;
   background-position: center;
-  background-attachment: fixed;
+  background-attachment: fixed; /* ติดตามหน้าจอ */
   position: absolute;
   top: 0;
   left: 0;
@@ -52,6 +52,24 @@
   background-position: center;
   background-attachment: fixed;
 }
+.white-frame {
+  width: 400px;
+  height: 650px;
+  background-color: white;
+  margin-left: -10%;
+  margin-bottom: 50px;
+  overflow: hidden; 
+}
+
+.map-inside-frame {
+  /* width: 380px; 
+  height: 580px; */
+  /* margin-left: -20px; */
+  overflow: auto;
+}
+
+
+
 .hexagon-col {
   margin-left: -2.4%;
 }
@@ -67,15 +85,15 @@
 
 .hexagon-row {
   display: flex;
-  margin-top: -8.5%;
+  margin-top: -13.5%;
 }
 
 .hexagon {
   position: relative;
   margin-left: -4.5%;
-  margin-top: 0%;
-  width: 120px;
-  height: 104px;
+  margin-top: -10%;
+  width: calc(2* var(--hex-size)); /* ปรับค่าขนาดของ hexagon */
+  height: calc(1.5 * var(--hex-size)); /* ปรับค่าขนาดของ hexagon */
   background-image: url(/src/Image/hqdefault.jpg);
   background-size: 200px;
   background-position: center;
@@ -84,16 +102,17 @@
 }
 .hexagon-even {
   position: relative;
-  margin-top: 8.7%;
+  margin-top: calc(0.115 * var(--hex-size)); /* ปรับค่าความห่างด้านบน */
   margin-left: -4.5%;
-  width: 120px;
-  height: 104px;
+  width: calc(1.5 * var(--hex-size)); /* ปรับค่าขนาดของ hexagon */
+  height: calc(1.3* var(--hex-size)); /* ปรับค่าขนาดของ hexagon */
   background-image: url(/src/Image/hqdefault.jpg);
   background-size: 200px;
   background-position: center;
   clip-path: polygon(0% 50%, 25% 100%, 75% 100%, 100% 50%, 75% 0%, 25% 0%);
   box-shadow: inset 0 0 20px 7px rgba(0, 0, 0, 0.5);
 }
+
 
 .Select {
   margin-top: 7%;
