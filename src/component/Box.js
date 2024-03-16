@@ -3,6 +3,7 @@ import SockJS from "sockjs-client";
 import Stomp from "stompjs";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Button from "./button";
 const Box = () => {
   const navigate = useNavigate();
   const [name, setName] = useState("");
@@ -25,17 +26,21 @@ const Box = () => {
   };
 
   return (
-    <div>
-      <label>
-        Enter your name:
-        <input
-          className=""
-          type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-      </label>
-      <button onClick={handleSubmit}>Submit</button>
+    <div className="BoxContainer">
+      <label>Enter your name</label>
+      <br></br>
+      <input
+        className={"font inputCus"}
+        style={{ textAlign: "center"}}
+        type="text"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
+      <div className="submitBot">
+        <button className={"pixel2 "} onClick={handleSubmit}>
+          Submit
+        </button>
+      </div>
     </div>
   );
 };

@@ -3,7 +3,7 @@
 .MenuBackground {
   width: 100vw; /* Full width of the viewport */
   height: 100vh; /* Full height of the viewport */
-  background-image: url(/src/Image/3ff9a7dcaebf98747d072c1bd6868479.jpg);
+  background-image: url(/src/Image/1b456377a9dce67a7dc3630260aa7572.gif);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -15,7 +15,7 @@
 .LobbyBackground {
   width: 100vw; /* Full width of the viewport */
   height: 100vh; /* Full height of the viewport */
-  background-image: url(/src/Image/Untitled.png);
+  background-image: url(/src/Image/21e2e73eb9a9984e3b407328f65f5e5b.gif);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -204,7 +204,9 @@
   display: none;
 }
 .Box {
-  border: solid black;
+  font-family: "Public Pixel", sans-serif;
+  font-size: 30px;
+  border: solid rgb(0, 0, 0);
   border-radius: 10px;
   border-width: 5px;
   background-color: white;
@@ -214,6 +216,11 @@
   margin-bottom: auto;
   width: 500px;
   height: 300px;
+  display: flex;
+  justify-content: center;
+  background-image: url(/src/Image/baeddaa8a28ed4a71df79662ffbb15f6.gif);
+  color: aliceblue;
+  text-shadow: 0 0px 14px #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 .Hidden {
   display: none;
@@ -224,7 +231,9 @@
   justify-content: center;
   align-items: center;
 }
-
+.BoxContainer {
+  margin-top: 12%;
+}
 .container {
   margin: 50px;
   display: block;
@@ -236,6 +245,16 @@
 
 .font {
   font-family: "Public Pixel", sans-serif;
+}
+.inputCus {
+  margin-top: 30px;
+  margin-left: 100px;
+  width: 50%;
+  height: 10%;
+}
+.submitBot {
+  margin-top: 30px;
+  margin-left: 110px;
 }
 
 .pixel,
@@ -486,6 +505,8 @@
   margin-top: 100px;
   margin-left: 180px;
   font-family: "Public Pixel", sans-serif;
+  color: #ffffff;
+  text-shadow: 0 0px 14px #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .UpbeatTitleDis {
@@ -493,4 +514,6 @@
   margin-top: 7px;
   margin-left: 180px;
   font-family: "Public Pixel", sans-serif;
+  color: #ffffff;
+  text-shadow: 0 0px 14px #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
