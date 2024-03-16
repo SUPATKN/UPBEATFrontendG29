@@ -54,7 +54,7 @@ const Gameplay = () => {
   return (
     <div className="GameplayBackground">
       <div className="GameplayBorder">
-        {console.log(allPlayers[0].crew.position)}
+        {/* {console.log(allPlayers[0].crew.position)} */}
         <Hexagon map={Map} allPlayer={allPlayers} />
       </div>
     </div>
