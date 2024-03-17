@@ -12,6 +12,7 @@ const Lobby = () => {
   const [allPlayersReady, setAllPlayersReady] = useState(false);
   const [allPlayers, setAllPlayers] = useState([]);
   const [isHost, setHost] = useState(false);
+  const [Me, setMe] = useState(null);
   const name = useParams();
   console.log(name["playername"]);
 
@@ -24,6 +25,11 @@ const Lobby = () => {
       });
       console.log(response.data);
       setAllPlayers(response.data);
+      let mePlayer = response.data.find(
+        (player) => player.name === name["playername"]
+      ); // ค้นหา player ของตัวเอง
+      setMe(mePlayer); // กำหนดค่า Me เป็น player ของตัวเราเอง
+      console.log(mePlayer);
     } catch (error) {
       console.error("Error fetching players:", error);
     }
@@ -53,9 +59,9 @@ const Lobby = () => {
   };
 
   // Function to handle player readiness
-  const handlePlayerReady = async (index) => {
+  const handlePlayerReady = async (name) => {
     try {
-      const player = allPlayers[index];
+      const player = allPlayers.find((player) => player.name === name);
       console.log(player.name);
       await axios.put("http://localhost:8080/Ready", player.name, {
         headers: { "Content-Type": "application/json" },
@@ -109,19 +115,37 @@ const Lobby = () => {
             <PlayerLobby
               key={index}
               playerName={player.name}
-              handlePlayerReady={() => handlePlayerReady(index)}
               playerReady={player.ready}
               Username={name["playername"]}
+              isHost={player.host}
             />
           ))}
       </div>
-      <div className="StartGame">
-        <Button
-          Title={"Start Game"}
-          handleClick={startGame}
-          Ready={allPlayersReady}
-        />
-      </div>
+      {isHost ? (
+        <div className="ReadyButton">
+          <Button
+            Title={Me && Me.ready ? "Unready" : "Ready"}
+            handleClick={() => handlePlayerReady(name["playername"])}
+          />
+        </div>
+      ) : (
+        <div className="ReadyButton"  style={{ marginTop: "80px" }}>
+          <Button
+            Title={Me && Me.ready ? "Unready" : "Ready"}
+            handleClick={() => handlePlayerReady(name["playername"])}
+          />
+        </div>
+      )}
+
+      {isHost && (
+        <div className="StartGame">
+          <Button
+            Title={"Start Game"}
+            handleClick={startGame}
+            Ready={allPlayersReady}
+          />
+        </div>
+      )}
     </div>
   );
 };

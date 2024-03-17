@@ -10,6 +10,25 @@ import Hexagon from "./Hexagon";
 const Gameplay = () => {
   const [Map, setMap] = useState([]);
   const [allPlayers, setAllPlayers] = useState([]);
+  const [Plan, setPlan] = useState("");
+  const name = useParams();
+  const MyName = name["name"];
+  console.log(name["name"]);
+  const handleSubmit = async () => {
+    try {
+      console.log(Plan);
+      const response = await axios.put(
+        "http://localhost:8080/Plan",
+        { name: MyName, plan: Plan },
+        {
+          headers: { "Content-Type": "application/json" },
+        }
+      );
+    } catch (error) {
+      console.error("Error adding player:", error);
+    }
+    console.log(Plan);
+  };
 
   const fetchAllPlayers = async () => {
     try {
@@ -29,8 +48,13 @@ const Gameplay = () => {
     const socket = new SockJS("http://localhost:8080/ws");
     const client = Stomp.over(socket);
 
-    client.connect({}, () => {});
+    client.connect({}, () => {
+      client.subscribe("/topic/updateMap", () => fetchMap());
+      client.subscribe("/topic/updateMap", () => fetchAllPlayers());
+    });
+    console.log("Im in");
     fetchAllPlayers();
+    fetchMap();
   }, []);
 
   const fetchMap = async () => {
@@ -56,6 +80,21 @@ const Gameplay = () => {
       <div className="GameplayBorder">
         {/* {console.log(allPlayers[0].crew.position)} */}
         <Hexagon map={Map} allPlayer={allPlayers} />
+        <div className="PlayerInfo">
+          <label>Enter your name</label>
+          <br></br>
+          <textarea
+            className={" inputCus"}
+            type="text"
+            value={Plan}
+            onChange={(e) => setPlan(e.target.value)}
+          />
+          <div className="submitBot">
+            <button className={"pixel2 "} onClick={handleSubmit}>
+              Submit
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
