@@ -69,8 +69,9 @@
   width: 400px;
   height: 650px;
   background-color: white;
-  margin-left: -10%;
-  margin-bottom: 50px;
+  margin-left: -304%;
+  /* margin-bottom: 20px; */
+  margin-top: -90px;
   overflow: hidden;
 }
 
@@ -78,7 +79,7 @@
   /* width: 380p;
   height: 580px; */
   /* margin-left: -20px; */
-  overflow: auto;
+  overflow: hidden;
 }
 
 .PlayerName {
@@ -105,20 +106,20 @@
 .hexagon-col-container {
   display: inline-block;
   margin-top: 5%;
-  margin-right: 200px;
+  /* margin-right: 200px; */
 }
 
 .hexagon-row {
   display: flex;
-  margin-top: -8.5%;
+  margin-top: -13.5%;
 }
 
 .hexagon {
   position: relative;
   margin-left: -4.5%;
-  margin-top: 0%;
-  width: 120px;
-  height: 104px;
+  margin-top: -10%;
+  width: calc(2* var(--hex-size)); /* ปรับค่าขนาดของ hexagon */
+  height: calc(1.5 * var(--hex-size)); /* ปรับค่าขนาดของ hexagon */
   background-image: url(/src/Image/hqdefault.jpg);
   background-size: 200px;
   background-position: center;
@@ -127,15 +128,30 @@
 }
 .hexagon-even {
   position: relative;
-  margin-top: 8.7%;
+  margin-top: calc(0.115 * var(--hex-size)); /* ปรับค่าความห่างด้านบน */
   margin-left: -4.5%;
-  width: 120px;
-  height: 104px;
+  width: calc(1.5 * var(--hex-size)); /* ปรับค่าขนาดของ hexagon */
+  height: calc(1.3* var(--hex-size)); /* ปรับค่าขนาดของ hexagon */
   background-image: url(/src/Image/hqdefault.jpg);
   background-size: 200px;
   background-position: center;
   clip-path: polygon(0% 50%, 25% 100%, 75% 100%, 100% 50%, 75% 0%, 25% 0%);
   box-shadow: inset 0 0 20px 7px rgba(0, 0, 0, 0.5);
+}
+.mini-map {
+  position: absolute;
+  top: 10px; /* Adjust position as needed */
+  right: 10px; /* Adjust position as needed */
+  border: 1px solid black; /* Add border for better visibility */
+}
+
+.mini-hexagon-row {
+  display: flex;
+}
+
+.mini-hexagon {
+  border: 1px solid black; /* Add border for better visibility */
+  margin: 1px; /* Add margin for better spacing */
 }
 
 .Select {
