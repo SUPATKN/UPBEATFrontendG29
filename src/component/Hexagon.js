@@ -2,7 +2,7 @@ import React from "react";
 import CityCenImg from "../Image/d2x297b-54f069b5-efef-407c-8bb4-bf81f4b547f4.png";
 import CrewImg from "../Image/Knight.png";
 
-const Hexagon = ({ map, allPlayer }) => {
+const Hexagon = ({ map, allPlayer, Me }) => {
   return (
     <div className="hexagon-col-container">
       {map.map((row, rowIndex) => (
@@ -19,17 +19,32 @@ const Hexagon = ({ map, allPlayer }) => {
                 key={colIndex}
                 className={colIndex % 2 === 0 ? "hexagon-even" : "hexagon"}
               >
-                {`row: ${hex.row}, col: ${hex.col}, cityCenter: ${
-                  hex.cityCenter ? "true" : "false"
-                }`}
-                <div className="image-container">
-                  {hex.cityCenter && (
-                    <img src={CityCenImg} className="image" alt="City Center" />
-                  )}
-                  {isCrewHere && (
-                    <img src={CrewImg} className="image" alt="Crew" />
-                  )}
+                <div
+                  className={hex.whoBelongName === Me ? "hexagonMe" : ""}
+                ></div>
+
+                {hex.whoBelongName !== Me && (
+                  <div
+                    className={
+                      hex.whoBelongName !== Me && hex.whoBelongName !== null
+                        ? "hexagonOther"
+                        : ""
+                    }
+                  ></div>
+                )}
+                <div className="">
+                  {`row: ${hex.row + 1}, col: ${hex.col + 1}, cityCenter: ${
+                    hex.cityCenter ? "true" : "false"
+                  }, CurrentDep : ${hex.deposit.currentdep}`}
                 </div>
+                {hex.whoBelongName === Me && (
+                  <div>
+                    {hex.cityCenter && (
+                      <img src={CityCenImg} className="image" />
+                    )}
+                    {isCrewHere && <img src={CrewImg} className="image" />}
+                  </div>
+                )}
               </div>
             );
           })}

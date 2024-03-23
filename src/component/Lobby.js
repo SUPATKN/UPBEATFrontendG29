@@ -25,6 +25,7 @@ const Lobby = () => {
       });
       console.log(response.data);
       setAllPlayers(response.data);
+      CheckAllReady();
       let mePlayer = response.data.find(
         (player) => player.name === name["playername"]
       ); // ค้นหา player ของตัวเอง
