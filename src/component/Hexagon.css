@@ -15,11 +15,11 @@
 }
 .mini-map {
   position: absolute ;
-  top: 710px;
-  right: 1800px;
-  border: 1px solid #ccc;
-  background-color: #f9f9f9;
-  padding: 1px;
+  top: 400px;
+  right: 60px;
+  border: 1px solid #000000;
+  background-color: #ffffff;
+  padding: 2px;
 }
 
 .mini-map-row {

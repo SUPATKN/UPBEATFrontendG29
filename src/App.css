@@ -1,616 +1,621 @@
-@import url("https://fonts.cdnfonts.com/css/public-pixel");
+  @import url("https://fonts.cdnfonts.com/css/public-pixel");
 
-.MenuBackground {
-  width: 100vw; /* Full width of the viewport */
-  height: 100vh; /* Full height of the viewport */
-  background-image: url(/src/Image/1b456377a9dce67a7dc3630260aa7572.gif);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-.LobbyBackground {
-  width: 100vw; /* Full width of the viewport */
-  height: 100vh; /* Full height of the viewport */
-  background-image: url(/src/Image/21e2e73eb9a9984e3b407328f65f5e5b.gif);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 90%;
-}
-.GameplayBackground {
-  width: 100vw; /* Full width of the viewport */
-  height: 100vh; /* Full height of the viewport */
-  background-image: url(/src/Image/3eb349e2eeecd92398b69ba585f6470a.jpg);
-  background-size: 20px; /* ขยายพื้นหลังเต็มพื้นที่ของ viewport */
-  background-repeat: repeat;
-  background-position: center;
-  background-attachment: fixed; /* ติดตามหน้าจอ */
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-.GameplayBorder {
-  display: flex;
-  position: fixed;
-  justify-content: flex-end;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 10px solid rgba(212, 212, 212, 0);
-  box-sizing: border-box; /* จัดการให้ขนาดความกว้างและความสูงของขอบนับรวมขอบด้วย */
-  box-shadow: inset 0 0 20px 11px rgba(0, 0, 0, 0.5);
-  background-clip: padding-box;
-  background-image: url(/src/Image/125906483-pixel-art-background-vector-illustration-abstract-square-pixel-pattern-mosaic-background.jpg);
-  background-size: 200px;
-  background-repeat: repeat;
-  background-position: center;
-  background-attachment: fixed;
-}
+  .MenuBackground {
+    width: 100vw; /* Full width of the viewport */
+    height: 100vh; /* Full height of the viewport */
+    background-image: url(/src/Image/1b456377a9dce67a7dc3630260aa7572.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .LobbyBackground {
+    width: 100vw; /* Full width of the viewport */
+    height: 100vh; /* Full height of the viewport */
+    background-image: url(/src/Image/21e2e73eb9a9984e3b407328f65f5e5b.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 90%;
+  }
+  .GameplayBackground {
+    width: 100vw; /* Full width of the viewport */
+    height: 100vh; /* Full height of the viewport */
+    background-image: url(/src/Image/3eb349e2eeecd92398b69ba585f6470a.jpg);
+    background-size: 20px; /* ขยายพื้นหลังเต็มพื้นที่ของ viewport */
+    background-repeat: repeat;
+    background-position: center;
+    background-attachment: fixed; /* ติดตามหน้าจอ */
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .GameplayBorder {
+    display: flex;
+    position: fixed;
+    justify-content: flex-end;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 10px solid rgba(212, 212, 212, 0);
+    box-sizing: border-box; /* จัดการให้ขนาดความกว้างและความสูงของขอบนับรวมขอบด้วย */
+    box-shadow: inset 0 0 20px 11px rgba(0, 0, 0, 0.5);
+    background-clip: padding-box;
+    background-image: url(/src/Image/125906483-pixel-art-background-vector-illustration-abstract-square-pixel-pattern-mosaic-background.jpg);
+    background-size: 200px;
+    background-repeat: repeat;
+    background-position: center;
+    background-attachment: fixed;
+  }
 
-.PlayerInfo {
-  background-image: url(/src/Image/3eb349e2eeecd92398b69ba585f6470a.jpg);
-  background-size: 20px;
-  width: 400px;
-  height: 100vh;
-  /* border: #000000 solid; */
-  box-sizing: border-box; /* จัดการให้ขนาดความกว้างและความสูงของขอบนับรวมขอบด้วย */
-  box-shadow: outset 0 0 20px 11px rgba(0, 0, 0, 0.5);
-}
-.white-frame {
-  width: 400px;
-  height: 650px;
-  background-color: white;
-  margin-left: -304%;
-  /* margin-bottom: 20px; */
-  margin-top: -90px;
-  overflow: hidden;
-}
+  .PlayerInfo {
+    background-image: url(/src/Image/3eb349e2eeecd92398b69ba585f6470a.jpg);
+    background-size: 20px;
+    width: 400px;
+    height: 100vh;
+    /* border: #000000 solid; */
+    box-sizing: border-box; /* จัดการให้ขนาดความกว้างและความสูงของขอบนับรวมขอบด้วย */
+    box-shadow: outset 0 0 20px 11px rgba(0, 0, 0, 0.5);
+  }
 
-.map-inside-frame {
-  /* width: 380p;
-  height: 580px; */
-  /* margin-left: -20px; */
-  overflow: hidden;
-}
 
-.PlayerName {
-  margin-top: 390px; /* การกำหนดระยะห่างด้านบน */
-  z-index: 1;
-  font-family: "Public Pixel", sans-serif;
-  font-size: 27px;
-  color: white;
-  position: absolute;
-  text-shadow: 0 0px 14px #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-  overflow-wrap: break-word; /* ให้ wrap เมื่อคำเกินความยาว */
-  word-wrap: break-word; /* ให้ wrap เมื่อคำเกินความยาว */
-  white-space: normal; /* ให้เว้นช่องว่างของบรรทัด */
-  word-break: break-all; /* แบ่งคำออกเมื่อคำเกินความยาว */
-}
+  .PlayerName {
+    margin-top: 390px; /* การกำหนดระยะห่างด้านบน */
+    z-index: 1;
+    font-family: "Public Pixel", sans-serif;
+    font-size: 27px;
+    color: white;
+    position: absolute;
+    text-shadow: 0 0px 14px #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    overflow-wrap: break-word; /* ให้ wrap เมื่อคำเกินความยาว */
+    word-wrap: break-word; /* ให้ wrap เมื่อคำเกินความยาว */
+    white-space: normal; /* ให้เว้นช่องว่างของบรรทัด */
+    word-break: break-all; /* แบ่งคำออกเมื่อคำเกินความยาว */
+  }
 
-.hexagon-col {
-  margin-left: -2.4%;
-}
-.hexagon-col-odd {
-  margin-top: 4.27%;
-  margin-left: -2.4%;
-}
-.hexagon-col-container {
-  display: inline-block;
-  margin-top: 5%;
-  /* margin-right: 200px; */
-}
+  .hexagon-col {
+    margin-left: -2.4%;
+  }
+  .hexagon-col-odd {
+    margin-top: 4.27%;
+    margin-left: -2.4%;
+  }
+  .hexagon-col-container {
+    display: inline-block; 
+    margin-top: 5%;
+    margin-right: 200px; 
+  }
 
-.hexagon-row {
-  display: flex;
-  margin-top: -13.5%;
-}
+  .hexagon-row {
+    display: flex;
+    /* margin-top: -13.5%; */
+  }
 
-.hexagon {
-  position: relative;
-  margin-left: -4.5%;
-  margin-top: -10%;
-  width: calc(2* var(--hex-size)); /* ปรับค่าขนาดของ hexagon */
-  height: calc(1.5 * var(--hex-size)); /* ปรับค่าขนาดของ hexagon */
-  background-image: url(/src/Image/hqdefault.jpg);
-  background-size: 200px;
-  background-position: center;
-  clip-path: polygon(0% 50%, 25% 100%, 75% 100%, 100% 50%, 75% 0%, 25% 0%);
-  box-shadow: inset 0 0 20px 7px rgba(0, 0, 0, 0.5);
-}
-.hexagon-even {
-  position: relative;
-  margin-top: calc(0.115 * var(--hex-size)); /* ปรับค่าความห่างด้านบน */
-  margin-left: -4.5%;
-  width: calc(1.5 * var(--hex-size)); /* ปรับค่าขนาดของ hexagon */
-  height: calc(1.3* var(--hex-size)); /* ปรับค่าขนาดของ hexagon */
-  background-image: url(/src/Image/hqdefault.jpg);
-  background-size: 200px;
-  background-position: center;
-  clip-path: polygon(0% 50%, 25% 100%, 75% 100%, 100% 50%, 75% 0%, 25% 0%);
-  box-shadow: inset 0 0 20px 7px rgba(0, 0, 0, 0.5);
-}
-.mini-map {
-  position: absolute;
-  top: 10px; /* Adjust position as needed */
-  right: 10px; /* Adjust position as needed */
-  border: 1px solid black; /* Add border for better visibility */
-}
+  .hexagon1 {
 
-.mini-hexagon-row {
-  display: flex;
-}
+    background-image: url(/src/Image/a.png);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+  }
+  .hexagon1I {
 
-.mini-hexagon {
-  border: 1px solid black; /* Add border for better visibility */
-  margin: 1px; /* Add margin for better spacing */
-}
+    background-image: url(/src/Image/ai_1.png);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    
+  }
+  .hexagon2 {
 
-.Select {
-  margin-top: 7%;
-  justify-content: center;
-  column-gap: 50px;
-  display: flex; /* Change inline-flex to flex */
-  flex-wrap: wrap;
-}
-.PlayerLobby {
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
-}
+    background-image: url(/src/Image/b.png);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+  }  
+  .hexagon2I {
 
-.PlayerImage {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 250px;
-  height: 320px;
-  border: #000000 solid;
-  border-radius: 60px;
-  border-color: white;
-  border-width: 6px;
-  background-color: rgb(9, 66, 46);
-  background-image: url(/src/Image/54012268766885.5b68cd4e27dcf.png);
-  background-position: center;
-  background-size: 170%;
-  background-repeat: no-repeat;
-}
-.PlayerImageMe {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 250px;
-  height: 320px;
-  border: #000000 solid;
-  border-radius: 60px;
-  border-color: rgb(157, 255, 0);
-  border-width: 6px;
-  background-color: rgb(213, 1, 1);
-  background-image: url(/src/Image/54012268766885.5b68cd4e27dcf.png);
-  background-position: center;
-  background-size: 170%;
-  background-repeat: no-repeat;
-}
+    background-image: url(/src/Image/bi.png);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+  }  
+  .hexagon3 {
 
-.StartGame {
-  margin-top: 1%;
-  display: flex;
-  justify-content: center;
-}
-.host {
-  font-family: "Public Pixel", sans-serif;
-  font-size: 25px;
-  color: white;
-  position: absolute;
-  margin-bottom: 270px;
-  z-index: 1;
-}
-.ReadyStatus {
-  font-family: "Public Pixel", sans-serif;
-  font-size: 20px;
-  color: white;
-  position: absolute;
-  margin-left: 1%;
-  margin-top: 250px;
-  z-index: 1;
-  text-shadow: 0 0px 14px #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-}
-.UnreadyStatus {
-  font-family: "Public Pixel", sans-serif;
-  font-size: 20px;
-  color: white;
-  position: absolute;
-  margin-left: 1%;
-  margin-top: 250px;
-  z-index: 1;
-  text-shadow: 0 0px 14px #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-}
+    background-image: url(/src/Image/c.png);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+  }  
+  .hexagon4 {
 
-.Unready {
-  width: 250px;
-  height: 320px;
-  background-color: #000000;
-  border-radius: 55px;
-  opacity: 70%;
-}
-.Ready {
-  width: 250px;
-  height: 320px;
-  background-color: #000000;
-  border-radius: 60px;
-  opacity: 0%;
-}
-.ReadyButton {
-  margin-top: 5%;
-  display: flex;
-  justify-content: center;
-  color: wheat;
-}
-.image-container {
-  position: relative;
-  width: 70px;
-  height: 70px;
-}
+    background-image: url(/src/Image/d.png);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+  }
+  .hexagon-map-container{
+    height: 400px;
+    width: 900px;
+    z-index: -1;
+  }
+  .main-map{
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+ 
+  .Select {
+    margin-top: 7%;
+    justify-content: center;
+    column-gap: 50px;
+    display: flex; /* Change inline-flex to flex */
+    flex-wrap: wrap;
+  }
+  .PlayerLobby {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+  }
 
-.image {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
+  .PlayerImage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 320px;
+    border: #000000 solid;
+    border-radius: 60px;
+    border-color: white;
+    border-width: 6px;
+    background-color: rgb(9, 66, 46);
+    background-image: url(/src/Image/54012268766885.5b68cd4e27dcf.png);
+    background-position: center;
+    background-size: 170%;
+    background-repeat: no-repeat;
+  }
+  .PlayerImageMe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 320px;
+    border: #000000 solid;
+    border-radius: 60px;
+    border-color: rgb(157, 255, 0);
+    border-width: 6px;
+    background-color: rgb(213, 1, 1);
+    background-image: url(/src/Image/54012268766885.5b68cd4e27dcf.png);
+    background-position: center;
+    background-size: 170%;
+    background-repeat: no-repeat;
+  }
 
-/* กำหนดภาพของ City Center มีลำดับความสำคัญสูงกว่าภาพของ Crew */
-.hexagon-even .image-container img:first-child {
-  z-index: 0;
-}
+  .StartGame {
+    margin-top: 1%;
+    display: flex;
+    justify-content: center;
+  }
+  .host {
+    font-family: "Public Pixel", sans-serif;
+    font-size: 25px;
+    color: white;
+    position: absolute;
+    margin-bottom: 270px;
+    z-index: 1;
+  }
+  .ReadyStatus {
+    font-family: "Public Pixel", sans-serif;
+    font-size: 20px;
+    color: white;
+    position: absolute;
+    margin-left: 1%;
+    margin-top: 250px;
+    z-index: 1;
+    text-shadow: 0 0px 14px #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  }
+  .UnreadyStatus {
+    font-family: "Public Pixel", sans-serif;
+    font-size: 20px;
+    color: white;
+    position: absolute;
+    margin-left: 1%;
+    margin-top: 250px;
+    z-index: 1;
+    text-shadow: 0 0px 14px #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  }
 
-/* กำหนดภาพของ Crew มีลำดับความสำคัญต่ำกว่าภาพของ City Center */
-.hexagon-even .image-container img:last-child {
-  z-index: 1;
-}
+  .Unready {
+    width: 250px;
+    height: 320px;
+    background-color: #000000;
+    border-radius: 55px;
+    opacity: 70%;
+  }
+  .Ready {
+    width: 250px;
+    height: 320px;
+    background-color: #000000;
+    border-radius: 60px;
+    opacity: 0%;
+  }
+  .ReadyButton {
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+    color: wheat;
+  }
+  .image-container {
+    position: relative;
+    width: 70px;
+    height: 70px;
+  }
 
-.hexagon .image-container img:first-child {
-  z-index: 0;
-}
+  .image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
 
-/* กำหนดภาพของ Crew มีลำดับความสำคัญต่ำกว่าภาพของ City Center */
-.hexagon .image-container img:last-child {
-  z-index: 1;
-}
+  /* กำหนดภาพของ City Center มีลำดับความสำคัญสูงกว่าภาพของ Crew */
+  .hexagon-even .image-container img:first-child {
+    z-index: 0;
+  }
 
-.Menu {
-  width: 200px;
-  margin-top: 30px;
-  margin-left: 200px;
+  /* กำหนดภาพของ Crew มีลำดับความสำคัญต่ำกว่าภาพของ City Center */
+  .hexagon-even .image-container img:last-child {
+    z-index: 1;
+  }
 
-  display: block;
-  justify-content: center;
-  align-items: center;
-}
-.MenuHidden {
-  display: none;
-}
-.Box {
-  font-family: "Public Pixel", sans-serif;
-  font-size: 30px;
-  border: solid rgb(0, 0, 0);
-  border-radius: 10px;
-  border-width: 5px;
-  background-color: white;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 10%;
-  margin-bottom: auto;
-  width: 500px;
-  height: 300px;
-  display: flex;
-  justify-content: center;
-  background-image: url(/src/Image/baeddaa8a28ed4a71df79662ffbb15f6.gif);
-  color: aliceblue;
-  text-shadow: 0 0px 14px #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-}
-.Hidden {
-  display: none;
-}
+  .hexagon .image-container img:first-child {
+    z-index: 0;
+  }
 
-.Content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.BoxContainer {
-  margin-top: 12%;
-}
-.container {
-  margin: 50px;
-  display: block;
-  width: 400px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
+  /* กำหนดภาพของ Crew มีลำดับความสำคัญต่ำกว่าภาพของ City Center */
+  .hexagon .image-container img:last-child {
+    z-index: 1;
+  }
 
-.font {
-  font-family: "Public Pixel", sans-serif;
-}
-.inputCus {
-  display: block;
-  margin-top: 30px;
-  margin-left: 100px;
-  width: 50%;
-  height: 10%;
-}
-.submitBot {
-  margin-top: 30px;
-  margin-left: 110px;
-}
+  .Menu {
+    width: 200px;
+    margin-top: 30px;
+    margin-left: 200px;
 
-.pixel,
-.pixel2 {
-  font-size: 25px;
-  color: white;
-  height: auto;
-  margin: 10px;
-  font-family: "VT323";
+    display: block;
+    justify-content: center;
+    align-items: center;
+  }
+  .MenuHidden {
+    display: none;
+  }
+  .Box {
+    font-family: "Public Pixel", sans-serif;
+    font-size: 30px;
+    border: solid rgb(0, 0, 0);
+    border-radius: 10px;
+    border-width: 5px;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    margin-bottom: auto;
+    width: 500px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    background-image: url(/src/Image/baeddaa8a28ed4a71df79662ffbb15f6.gif);
+    color: aliceblue;
+    text-shadow: 0 0px 14px #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  }
+  .Hidden {
+    display: none;
+  }
 
-  position: relative;
-  display: inline-block;
-  vertical-align: top;
-  text-transform: uppercase;
+  .Content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .BoxContainer {
+    margin-top: 12%;
+  }
+  .container {
+    margin: 50px;
+    display: block;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
 
-  cursor: pointer;
+  .font {
+    font-family: "Public Pixel", sans-serif;
+  }
+  .inputCus {
+    display: block;
+    margin-top: 30px;
+    margin-left: 100px;
+    width: 50%;
+    height: 10%;
+  }
+  .submitBot {
+    margin-top: 30px;
+    margin-left: 110px;
+  }
 
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
+  .pixel,
+  .pixel2 {
+    font-size: 25px;
+    color: white;
+    height: auto;
+    margin: 10px;
+    font-family: "VT323";
 
-.pixel:active,
-.pixel2:active {
-  top: 2px;
-  color: rgb(24, 137, 4);
-}
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    text-transform: uppercase;
 
-.pixel {
-  line-height: 0;
+    cursor: pointer;
 
-  image-rendering: optimizeSpeed;
-  image-rendering: -moz-crisp-edges; /* Firefox */
-  image-rendering: -o-crisp-edges; /* Opera */
-  image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
-  image-rendering: crisp-edges;
-  -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
 
-  border-style: solid;
-  border-width: 20px;
-  -moz-border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
-  -webkit-border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
-  -o-border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
-  border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
-}
+  .pixel:active,
+  .pixel2:active {
+    top: 2px;
+    color: rgb(24, 137, 4);
+  }
 
-.pixel p {
-  display: inline-block;
-  vertical-align: top;
-  position: relative;
-  width: auto;
-  text-align: center;
-  margin: -20px -20px;
-  line-height: 20px;
-  padding: 10px 20px;
+  .pixel {
+    line-height: 0;
 
-  background: #000000;
-  background: linear-gradient(135deg, transparent 10px, #000000 0) top left,
-    linear-gradient(225deg, transparent 10px, #000000 0) top right,
-    linear-gradient(315deg, transparent 10px, #000000 0) bottom right,
-    linear-gradient(45deg, transparent 10px, #000000 0) bottom left;
-  background-size: 50% 50%;
-  background-repeat: no-repeat;
-  background-image: radial-gradient(
-      circle at 0 0,
-      rgba(204, 0, 0, 0) 14px,
-      #000000 15px
-    ),
-    radial-gradient(circle at 100% 0, rgba(204, 0, 0, 0) 14px, #000000 15px),
-    radial-gradient(circle at 100% 100%, rgba(204, 0, 0, 0) 14px, #000000 15px),
-    radial-gradient(circle at 0 100%, rgba(204, 0, 0, 0) 14px, #000000 15px);
-}
+    image-rendering: optimizeSpeed;
+    image-rendering: -moz-crisp-edges; /* Firefox */
+    image-rendering: -o-crisp-edges; /* Opera */
+    image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
 
-.pixel2 {
-  position: relative;
-  display: block;
-  margin: 10px;
-  font-family: "Public Pixel", sans-serif;
-  text-transform: uppercase;
+    border-style: solid;
+    border-width: 20px;
+    -moz-border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
+    -webkit-border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
+    -o-border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
+    border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
+  }
 
-  font-size: 15px;
-  color: rgb(255, 255, 255);
-}
+  .pixel p {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    width: auto;
+    text-align: center;
+    margin: -20px -20px;
+    line-height: 20px;
+    padding: 10px 20px;
 
-.pixel2::before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 10px;
-  bottom: 10px;
-  left: -10px;
-  right: -10px;
-  background: black;
-  z-index: -1;
-}
+    background: #000000;
+    background: linear-gradient(135deg, transparent 10px, #000000 0) top left,
+      linear-gradient(225deg, transparent 10px, #000000 0) top right,
+      linear-gradient(315deg, transparent 10px, #000000 0) bottom right,
+      linear-gradient(45deg, transparent 10px, #000000 0) bottom left;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    background-image: radial-gradient(
+        circle at 0 0,
+        rgba(204, 0, 0, 0) 14px,
+        #000000 15px
+      ),
+      radial-gradient(circle at 100% 0, rgba(204, 0, 0, 0) 14px, #000000 15px),
+      radial-gradient(circle at 100% 100%, rgba(204, 0, 0, 0) 14px, #000000 15px),
+      radial-gradient(circle at 0 100%, rgba(204, 0, 0, 0) 14px, #000000 15px);
+  }
 
-.pixel2::after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 4px;
-  bottom: 4px;
-  left: -6px;
-  right: -6px;
-  background: black;
-  z-index: -1;
-}
+  .pixel2 {
+    position: relative;
+    display: block;
+    margin: 10px;
+    font-family: "Public Pixel", sans-serif;
+    text-transform: uppercase;
 
-.pixel2 {
-  padding: 10px 10px;
-  position: relative;
-  background: black;
-  width: 200px;
-  height: 50px;
-  z-index: 2;
-}
-.pixel2Start {
-  position: relative;
-  display: block;
-  margin: 10px;
-  font-family: "Public Pixel", sans-serif;
-  text-transform: uppercase;
+    font-size: 15px;
+    color: rgb(255, 255, 255);
+  }
 
-  font-size: 15px;
-  color: rgb(81, 76, 76);
-}
-.pixelStart,
-.pixel2Start {
-  font-size: 25px;
-  color: white;
-  height: auto;
-  margin: 10px;
-  font-family: "VT323";
+  .pixel2::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    left: -10px;
+    right: -10px;
+    background: black;
+    z-index: -1;
+  }
 
-  position: relative;
-  display: inline-block;
-  vertical-align: top;
-  text-transform: uppercase;
+  .pixel2::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 4px;
+    bottom: 4px;
+    left: -6px;
+    right: -6px;
+    background: black;
+    z-index: -1;
+  }
 
-  cursor: pointer;
+  .pixel2 {
+    padding: 10px 10px;
+    position: relative;
+    background: black;
+    width: 200px;
+    height: 50px;
+    z-index: 2;
+  }
+  .pixel2Start {
+    position: relative;
+    display: block;
+    margin: 10px;
+    font-family: "Public Pixel", sans-serif;
+    text-transform: uppercase;
 
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
+    font-size: 15px;
+    color: rgb(81, 76, 76);
+  }
+  .pixelStart,
+  .pixel2Start {
+    font-size: 25px;
+    color: white;
+    height: auto;
+    margin: 10px;
+    font-family: "VT323";
 
-.pixelStart:active,
-.pixel2Start:active {
-  top: 2px;
-}
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    text-transform: uppercase;
 
-.pixelStart {
-  line-height: 0;
+    cursor: pointer;
 
-  image-rendering: optimizeSpeed;
-  image-rendering: -moz-crisp-edges; /* Firefox */
-  image-rendering: -o-crisp-edges; /* Opera */
-  image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
-  image-rendering: crisp-edges;
-  -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
 
-  border-style: solid;
-  border-width: 20px;
-  -moz-border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
-  -webkit-border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
-  -o-border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
-  border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
-}
+  .pixelStart:active,
+  .pixel2Start:active {
+    top: 2px;
+  }
 
-.pixelStart p {
-  display: inline-block;
-  vertical-align: top;
-  position: relative;
-  width: auto;
-  text-align: center;
-  margin: -20px -20px;
-  line-height: 20px;
-  padding: 10px 20px;
+  .pixelStart {
+    line-height: 0;
 
-  background: #000000;
-  background: linear-gradient(135deg, transparent 10px, #000000 0) top left,
-    linear-gradient(225deg, transparent 10px, #000000 0) top right,
-    linear-gradient(315deg, transparent 10px, #000000 0) bottom right,
-    linear-gradient(45deg, transparent 10px, #000000 0) bottom left;
-  background-size: 50% 50%;
-  background-repeat: no-repeat;
-  background-image: radial-gradient(
-      circle at 0 0,
-      rgba(204, 0, 0, 0) 14px,
-      #000000 15px
-    ),
-    radial-gradient(circle at 100% 0, rgba(204, 0, 0, 0) 14px, #000000 15px),
-    radial-gradient(circle at 100% 100%, rgba(204, 0, 0, 0) 14px, #000000 15px),
-    radial-gradient(circle at 0 100%, rgba(204, 0, 0, 0) 14px, #000000 15px);
-}
+    image-rendering: optimizeSpeed;
+    image-rendering: -moz-crisp-edges; /* Firefox */
+    image-rendering: -o-crisp-edges; /* Opera */
+    image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
 
-.pixel2Start {
-  position: relative;
-  display: block;
-  margin: 10px;
-  font-family: "Public Pixel", sans-serif;
-  text-transform: uppercase;
+    border-style: solid;
+    border-width: 20px;
+    -moz-border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
+    -webkit-border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
+    -o-border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
+    border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
+  }
 
-  font-size: 15px;
-  color: rgb(95, 93, 93);
-}
+  .pixelStart p {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    width: auto;
+    text-align: center;
+    margin: -20px -20px;
+    line-height: 20px;
+    padding: 10px 20px;
 
-.pixel2Start::before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 10px;
-  bottom: 10px;
-  left: -10px;
-  right: -10px;
-  background: black;
-  z-index: -1;
-}
+    background: #000000;
+    background: linear-gradient(135deg, transparent 10px, #000000 0) top left,
+      linear-gradient(225deg, transparent 10px, #000000 0) top right,
+      linear-gradient(315deg, transparent 10px, #000000 0) bottom right,
+      linear-gradient(45deg, transparent 10px, #000000 0) bottom left;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    background-image: radial-gradient(
+        circle at 0 0,
+        rgba(204, 0, 0, 0) 14px,
+        #000000 15px
+      ),
+      radial-gradient(circle at 100% 0, rgba(204, 0, 0, 0) 14px, #000000 15px),
+      radial-gradient(circle at 100% 100%, rgba(204, 0, 0, 0) 14px, #000000 15px),
+      radial-gradient(circle at 0 100%, rgba(204, 0, 0, 0) 14px, #000000 15px);
+  }
 
-.pixel2Start::after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 4px;
-  bottom: 4px;
-  left: -6px;
-  right: -6px;
-  background: black;
-  z-index: -1;
-}
+  .pixel2Start {
+    position: relative;
+    display: block;
+    margin: 10px;
+    font-family: "Public Pixel", sans-serif;
+    text-transform: uppercase;
 
-.pixel2Start {
-  padding: 10px 10px;
-  position: relative;
-  background: black;
-  width: 200px;
-  height: 50px;
-  z-index: 2;
-}
-.UpbeatTitle {
-  font-size: 50px;
-  margin-top: 100px;
-  margin-left: 180px;
-  font-family: "Public Pixel", sans-serif;
-  color: #ffffff;
-  text-shadow: 0 0px 14px #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-}
+    font-size: 15px;
+    color: rgb(95, 93, 93);
+  }
 
-.UpbeatTitleDis {
-  font-size: 20px;
-  margin-top: 7px;
-  margin-left: 180px;
-  font-family: "Public Pixel", sans-serif;
-  color: #ffffff;
-  text-shadow: 0 0px 14px #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-}
+  .pixel2Start::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    left: -10px;
+    right: -10px;
+    background: black;
+    z-index: -1;
+  }
+
+  .pixel2Start::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 4px;
+    bottom: 4px;
+    left: -6px;
+    right: -6px;
+    background: black;
+    z-index: -1;
+  }
+
+  .pixel2Start {
+    padding: 10px 10px;
+    position: relative;
+    background: black;
+    width: 200px;
+    height: 50px;
+    z-index: 2;
+  }
+  .UpbeatTitle {
+    font-size: 50px;
+    margin-top: 100px;
+    margin-left: 180px;
+    font-family: "Public Pixel", sans-serif;
+    color: #ffffff;
+    text-shadow: 0 0px 14px #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  }
+
+  .UpbeatTitleDis {
+    font-size: 20px;
+    margin-top: 7px;
+    margin-left: 180px;
+    font-family: "Public Pixel", sans-serif;
+    color: #ffffff;
+    text-shadow: 0 0px 14px #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  }
