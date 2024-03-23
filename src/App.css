@@ -606,6 +606,7 @@
     font-size: 50px;
     margin-top: 100px;
     margin-left: 180px;
+    margin-bottom: 20px;
     font-family: "Public Pixel", sans-serif;
     color: #ffffff;
     text-shadow: 0 0px 14px #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
@@ -619,3 +620,11 @@
     color: #ffffff;
     text-shadow: 0 0px 14px #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   }
+  .PlayerStatus{
+    padding: 20px;
+  }
+  
+  .PlayerStatusIn{
+    padding: 10px ;
+  }
+  
