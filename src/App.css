@@ -107,9 +107,18 @@
     background-repeat: no-repeat;
     
   }
-  .hexagon1I {
+  .hexagon1I0 {
 
-    background-image: url(/src/Image/ai_1.png);
+    background-image: url(/src/Image/ai0.png);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    
+  }
+  .hexagon1I1 {
+
+    background-image: url(/src/Image/ai1.png);
     background-size: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -124,14 +133,7 @@
     background-repeat: no-repeat;
     
   }  
-  .hexagon2I {
-
-    background-image: url(/src/Image/bi.png);
-    background-size: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    
-  }  
+ 
   .hexagon3 {
 
     background-image: url(/src/Image/c.png);
@@ -140,6 +142,14 @@
     background-repeat: no-repeat;
     
   }  
+  .hexagon3I {
+
+    background-image: url(/src/Image/ci.png);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+  } 
   .hexagon4 {
 
     background-image: url(/src/Image/d.png);
@@ -148,10 +158,17 @@
     background-repeat: no-repeat;
     
   }
+  .hexagon4I {
+
+    background-image: url(/src/Image/di.png);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+  }
   .hexagon-map-container{
     height: 400px;
     width: 900px;
-    z-index: -1;
   }
   .main-map{
     position: relative;
