@@ -84,10 +84,10 @@ const Gameplay = () => {
       });
       console.log(response.data);
       setAllPlayers(response.data);
-      let mePlayer = response.data.find(
-        (player) => player.name === name["playername"]
-      ); // ค้นหา player ของตัวเอง
+      let mePlayer = response.data.find((player) => player.name === MyName); // ค้นหา player ของตัวเอง
+      console.log(mePlayer);
       setMe(mePlayer);
+      console.log(Me);
       CheckAllInitial();
     } catch (error) {
       console.error("Error fetching players:", error);
@@ -179,9 +179,54 @@ const Gameplay = () => {
     console.log(Map);
   }, []);
 
+  function countdown(seconds) {
+    const startTime = Date.now();
+    const endTime = startTime + seconds * 1000; // Convert seconds to milliseconds
+
+    function updateTimer() {
+      const remainingTime = endTime - Date.now();
+
+      if (remainingTime <= 0) {
+        // Time's up!
+        clearInterval(interval);
+        console.log("Countdown finished!");
+        return;
+      }
+
+      const minutes = Math.floor(remainingTime / 60000);
+      const seconds = Math.floor((remainingTime % 60000) / 1000);
+
+      // Ensure the timer element exists before updating its content
+      const timerElement = document.getElementById("timer");
+      if (timerElement) {
+        timerElement.textContent = `${minutes}:${seconds
+          .toString()
+          .padStart(2, "0")}`;
+      } else {
+        console.error("Timer element with ID 'timer' not found!");
+      }
+    }
+
+    const interval = setInterval(updateTimer, 1000); // Update every second
+  }
+
+  // Example usage: Start a 15-second countdown
+  countdown(300);
+
   return (
-    <div className="GameplayBackground">
-      <div className="GameplayBorder">
+    <div className="Gameplay">
+      /*----------- TOP SECTION -----------*/
+      <div className="GameplayBackground-top">
+        <div className="font PlayerStatusIn" id="player_name">
+          PLAYER NAME : <span id="playername">{Me && Me.name}</span>
+        </div>
+
+        <div class="font PlayerStatusIn">
+          COUNTDOWN TIME: <span id="timer"></span>
+        </div>
+      </div>
+      /*----------- MAIN SECTION -----------*/
+      <div className="Gameplay-Main">
         {PlanClick && (
           <ConfirmPlan
             Plan={Plan}
@@ -189,28 +234,80 @@ const Gameplay = () => {
             handleSubmit={handleSubmit}
           />
         )}
-        {/* {console.log(allPlayers[0].crew.position)} */}
-        <Hexagon map={Map} allPlayer={allPlayers} Me={MyName} />
-        <div className="PlayerInfo">
-          <div className="submitBot">
-            <button className={"pixel2"} onClick={PlanSubmit}>
-              Do same plan
-            </button>
-            <button className={"pixel2"} onClick={PlanArea}>
-              Plan
-            </button>
-            {GameState && <div>Game turn : {GameState.totalTurn}</div>}
-            <br />
-            Turn : {whoTurn === MyName ? MyName : whoTurn}
-            <br />
-            {allInitial
-              ? "Game Start!!!"
-              : "waiting other player plan initial plan"}
-            <br />
-            {isAction ? "Doing action..." : ""}
+
+        <div className="GameplayBackground-left">
+          <Hexagon map={Map} allPlayer={allPlayers} Me={MyName} />
+        </div>
+
+        <div className="GameplayBackground-right">
+          <div className="PlayerInfo PlayerStatus">
+            <div className="PlayerStatusIn">
+              <div className="mini-map">
+                {Map.map((row, rowIndex) => (
+                  <div key={rowIndex} className="mini-map-row">
+                    {row.map((hex, colIndex) => (
+                      <div
+                        key={`${rowIndex}-${colIndex}`}
+                        className="mini-hexagon"
+                        style={{
+                          width: "11px",
+                          height: "6px",
+                          marginTop: hex.col % 2 === 0 ? "5px" : "1px",
+                          backgroundColor:
+                            hex.whoBelongName === MyName
+                              ? "red"
+                              : "transparent",
+                        }}
+                      ></div>
+                    ))}
+                  </div>
+                ))}
+              </div>
+              <div className="submitBot">
+                <button className={"pixel2"} onClick={PlanSubmit}>
+                  Do same plan
+                </button>
+                <button className={"pixel2"} onClick={PlanArea}>
+                  Plan
+                </button>
+                {GameState && <div>Game turn : {GameState.totalTurn}</div>}
+                <br />
+                Turn : {whoTurn === MyName ? MyName : whoTurn}
+                <br />
+                {allInitial
+                  ? "Game Start!!!"
+                  : "waiting other player plan initial plan"}
+                <br />
+                {isAction ? "Doing action..." : ""}
+              </div>
+            </div>
+
+            <div>
+              <div id="budget">
+                <div className="font PlayerStatusIn" id="budget-value">
+                  {" "}
+                  BUDGET : {Me && Me.budget}
+                </div>
+              </div>
+
+              <div id="citycenter">
+                <div className="font PlayerStatusIn" id="citycenter">
+                  {" "}
+                  CITY CENTER : {Me && Me.cityCenter.row + 1} ,{" "}
+                  {Me && Me.cityCenter.col + 1}{" "}
+                </div>
+              </div>
+
+              <div id="totolRegion">
+                <div className="font PlayerStatusIn" id="xp-value">
+                  TOTOL REGION : {Me && Me.totolRegion}{" "}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+      <div className="GameplayBackground-bottom"></div>
     </div>
   );
 };
