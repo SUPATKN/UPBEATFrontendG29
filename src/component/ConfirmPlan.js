@@ -1,7 +1,13 @@
-const ConfirmPlan = ({ Plan, setPlan, handleSubmit,click }) => {
+import { useState, useEffect } from "react";
+import CountdownTimer from "./CountdownTimer";
+const ConfirmPlan = ({ Plan, setPlan, handleSubmit,intMin,intSec,initial}) => {
+  
+
   return (
     <div className="PlanBoard">
       <div className="PlanArea">
+    {!initial ? <CountdownTimer minutes={intMin} seconds={intSec} /> : <CountdownTimer minutes={30} seconds={0} />  }
+
       <label className="font">Enter Plan </label>
       <br></br>
       <textarea
@@ -13,7 +19,6 @@ const ConfirmPlan = ({ Plan, setPlan, handleSubmit,click }) => {
       />
       <button className={"pixel2"} onClick={()=>{
         handleSubmit()
-        click()
       }}>
         Submit
       </button>

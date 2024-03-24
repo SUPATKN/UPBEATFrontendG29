@@ -1,13 +1,11 @@
 import { useParams } from "react-router-dom";
-import PlayerLobby from "./PlayerLobby";
 import { useState, useEffect } from "react";
-import Button from "./button";
-import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import SockJS from "sockjs-client";
 import Stomp from "stompjs";
 import Hexagon from "./Hexagon";
 import ConfirmPlan from "./ConfirmPlan";
+
 const Gameplay = () => {
   const [Map, setMap] = useState([]);
   const [GameState, setGamestate] = useState();
@@ -19,8 +17,13 @@ const Gameplay = () => {
   const [PlanClick, setPlanClick] = useState(true);
   const [isAction, setisAction] = useState(false);
   const [Me, setMe] = useState(null);
+  const [intMin, setIntMin] = useState(5);
+const [intSec, setIntSec] = useState(0);
+const [revMin, setRevMin] = useState(0);
+const [revSec, setRevSec] = useState(0);
   const name = useParams();
   const MyName = name["name"];
+
   console.log(name["name"]);
 
   const PlanSubmit = () => {
@@ -94,6 +97,14 @@ const Gameplay = () => {
     }
   };
 
+
+  const AlertLose = () => {
+      alert("Some Player Lose") 
+      fetchAllPlayers()
+      fetchGameState()
+  }
+
+
   useEffect(() => {
     const socket = new SockJS("http://localhost:8080/ws");
     const client = Stomp.over(socket);
@@ -103,10 +114,19 @@ const Gameplay = () => {
       client.subscribe("/topic/updateMap", () => fetchAllPlayers());
       client.subscribe("/topic/initial", () => CheckAllInitial());
       client.subscribe("/topic/nextPlayerTurn", () => fetchGameState());
+      client.subscribe("/topic/playerLose", () => AlertLose());
     });
     fetchAllPlayers();
     fetchMap();
     fetchGameState();
+    if(GameState){
+      setIntMin(GameState.init_plan_min)
+      setIntSec(GameState.init_plan_sec)
+      setRevMin(GameState.plan_rev_min)
+      setRevSec(GameState.plan_rev_sec) 
+    }
+      
+    
   }, []);
 
   const fetchMap = async () => {
@@ -132,8 +152,25 @@ const Gameplay = () => {
       });
       console.log(response.data);
       setGamestate(response.data);
+      
       let turn = response.data.turn.name;
       setWhoTurn(turn);
+      let intMin = response.data.init_plan_min
+      let intSec = response.data.init_plan_sec
+      let RevMin = response.data.plan_rev_min
+      let RevSec = response.data.plan_rev_sec
+      setIntMin(GameState.init_plan_min)
+      setIntSec(GameState.init_plan_sec)
+      setRevMin(GameState.plan_rev_min)
+      setRevSec(GameState.plan_rev_sec) 
+
+      setIntMin(response.data.init_plan_min)
+      setIntSec(response.data.init_plan_sec)
+      setRevMin(GameState.plan_rev_min)
+      setRevSec(GameState.plan_rev_sec) 
+      
+      
+
     } catch (error) {
       console.error("Error fetching players:", error);
     }
@@ -179,39 +216,7 @@ const Gameplay = () => {
     console.log(Map);
   }, []);
 
-  function countdown(seconds) {
-    const startTime = Date.now();
-    const endTime = startTime + seconds * 1000; // Convert seconds to milliseconds
 
-    function updateTimer() {
-      const remainingTime = endTime - Date.now();
-
-      if (remainingTime <= 0) {
-        // Time's up!
-        clearInterval(interval);
-        console.log("Countdown finished!");
-        return;
-      }
-
-      const minutes = Math.floor(remainingTime / 60000);
-      const seconds = Math.floor((remainingTime % 60000) / 1000);
-
-      // Ensure the timer element exists before updating its content
-      const timerElement = document.getElementById("timer");
-      if (timerElement) {
-        timerElement.textContent = `${minutes}:${seconds
-          .toString()
-          .padStart(2, "0")}`;
-      } else {
-        console.error("Timer element with ID 'timer' not found!");
-      }
-    }
-
-    const interval = setInterval(updateTimer, 1000); // Update every second
-  }
-
-  // Example usage: Start a 15-second countdown
-  countdown(300);
 
   return (
     <div className="Gameplay">
@@ -224,6 +229,7 @@ const Gameplay = () => {
         </div>
 
         <div className="font GameplayBackground-top-turn">
+       
           <div className="PlayerStatusIn" > {GameState && <div> GAME TURN : {GameState.totalTurn}</div>}</div>
           {whoTurn === MyName ? <div className="PlayerStatusIn MyTurn">MY TURN</div> : <div className="PlayerStatusIn OtherTurn">OTHER PLAYER TURN | TURN : {whoTurn} </div>}
         </div>
@@ -240,7 +246,9 @@ const Gameplay = () => {
                 Plan={Plan}
                 setPlan={setPlan}
                 handleSubmit={handleSubmit}
-                click={PlanArea}
+                intMin={intMin}
+                intSec={intSec}
+                initial={allInitial}
               />
             )}
           </div>

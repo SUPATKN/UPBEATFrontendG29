@@ -30,7 +30,13 @@
   width: 100%;
   height: 0 px;
 }
-
+.Warning{
+  font-size: 14px;
+  text-align: center;
+  color: red;
+  text-shadow: 0 0px 2px   #000000, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff;
+  
+}
 .Gameplay-Main {
   margin-top: 34px;
   display: flex;
@@ -143,6 +149,11 @@
   display: flex;
   /* margin-top: -13.5%; */
 }
+  .hexagon-row {
+    display: flex;
+    /* margin-top: -13.5%; */
+  }
+
 
 .hexagon1 {
   background-image: url(/src/Image/a.png);
@@ -194,8 +205,10 @@
   background-repeat: no-repeat;
 }
 .hexagon-map-container {
-  height: 100%;
-  width: 100%;
+  height: 400px;
+    width: 700px;
+    background-image: url(/src/Image/BlGVAfgCEAAOv7V.png);
+    background-size: cover;
 }
 .main-map {
   background-image: none;
@@ -233,9 +246,9 @@
   border-color: white;
   border-width: 6px;
   background-color: rgb(9, 66, 46);
-  background-image: url(/src/Image/54012268766885.5b68cd4e27dcf.png);
+  background-image: url(/src/Image/pngtree-beowulf-clipart-cartoon-viking-cartoon-character-character-illustration-vector-png-image_6798546.png);
   background-position: center;
-  background-size: 170%;
+  background-size: 150%;
   background-repeat: no-repeat;
 }
 .PlayerImageMe {
@@ -250,9 +263,9 @@
   border-color: rgb(157, 255, 0);
   border-width: 6px;
   background-color: rgb(213, 1, 1);
-  background-image: url(/src/Image/54012268766885.5b68cd4e27dcf.png);
+  background-image: url(/src/Image/pngtree-beowulf-clipart-cartoon-viking-cartoon-character-character-illustration-vector-png-image_6798546.png);
   background-position: center;
-  background-size: 170%;
+  background-size: 120%;
   background-repeat: no-repeat;
 }
 
@@ -368,9 +381,11 @@
   height: 300px;
   display: flex;
   justify-content: center;
-  background-image: url(/src/Image/baeddaa8a28ed4a71df79662ffbb15f6.gif);
+  background-image: url(/src/Image/forest_of_pixels_by_bunnsp_ddxkac6-pre.jpg);
   color: aliceblue;
   text-shadow: 0 0px 14px #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  background-size: cover;
+
 }
 .Hidden {
   display: none;
