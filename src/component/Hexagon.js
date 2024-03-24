@@ -19,19 +19,18 @@
   import bg  from "../Image/BlGVAfgCEAAOv7V.png";
   import "./Hexagon.css";
 
-  const Hexagon = ({ map, allPlayer }) => {
-    const [zoomed, setZoomed] = useState(false); 
-    const [hexSize, setHexSize] = useState(50); 
-    const [mgL, setMgL] = useState(-13.5); 
-    const [mgB, setMgB] = useState(-33); 
-    const [mgt, setMgT] = useState(25);
-    const [Imgt, setiMgT] = useState(22);
-    const [isDragging, setIsDragging] = useState(false);
-    const [startX, setStartX] = useState(0);
-    const [startY, setStartY] = useState(0);
-    const containerRef = useRef(null);
+const Hexagon = ({ map, allPlayer, Me }) => {
+  const [zoomed, setZoomed] = useState(false);
+  const [hexSize, setHexSize] = useState(50);
+  const [mgL, setMgL] = useState(-13.5);
+  const [mgB, setMgB] = useState(-33);
+  const [mgt, setMgT] = useState(25);
+  const [Imgt, setiMgT] = useState(22);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [startY, setStartY] = useState(0);
+  const containerRef = useRef(null);
 
-    console.log(hexSize,mgL,mgB,mgt,Imgt);
 
     const handleMouseDown = (e) => {
       setIsDragging(true);
@@ -57,11 +56,21 @@
       setStartY(e.clientY);
     };
 
-    return (
-      <div style={{width: "700px", height: "400px",marginRight:"300px",marginTop:"50px", border: "2px solid black", overflow: "hidden",background:{bg} }}>
+  return (
+    <div
+      style={{
+        width: "900px",
+        height: "450px",
+        // marginRight: "100px",
+        // marginTop: "50px",
+        border: "2px solid black",
+        overflow: "hidden",
+        background: "#ffffff",
+      }}
+    >
       <div
         ref={containerRef}
-        style={{overflow: "hidden", background: {bg} }}
+        style={{ overflow: "hidden", background: "#ffffff" }}
         onWheel={(e) => {
           if (e.deltaY > 0 && hexSize > 50) {
             setHexSize(hexSize - 5);
@@ -80,17 +89,25 @@
         onMouseMove={handleMouseMove}
         className="hexagon-map-container"
       >
-        <div className="main-map" style={{ width: "100%", height: "100%" ,paddingLeft:"10%"}}>
+        <div
+          className="main-map"
+          style={{ width: "100%", height: "100%", paddingLeft: "100px"}}
+        >
           {map.map((row, rowIndex) => (
             <div key={rowIndex} className="hexagon-row">
               {row.map((hex, colIndex) => {
                 const isCrewHere = allPlayer.some(
                   (player) =>
                     player.crew.position.row === hex.row &&
-                    player.crew.position.col === hex.col
+                    player.crew.position.col === hex.col &&
+                    player.crew.myownName === Me
                 );
+                // const MyCrew = allPlayer.some(
+                //   (player) => player.crew.myownName === Me
+                // );
 
                 const marginTop = colIndex % 2 === 0 ? mgt : mgt - Imgt;
+
 
                 //oddodd no d
                 //oddeven have d
@@ -349,7 +366,22 @@
                           }}
                         />
                       )}
-                      {hex.cityCenter && (
+                      {hex.whoBelongName === Me && (
+                        <img
+                          src={HexRed}
+                          className="image"
+                          style={{
+                            width: `${hexSize * 1.43}%`,
+                            height: `${hexSize * 1.2}%`,
+                            marginTop: `${hexSize * 0.1}%`,
+                            marginLeft: `${hexSize * 0.01}%`,
+                            opacity: `${75}%`,
+                          }}
+                          alt="City Center"
+                        />
+                      )}
+
+                      {hex.cityCenter && hex.whoBelongName === Me && (
                         <img
                           src={CityCenImg}
                           className="image"
@@ -362,6 +394,7 @@
                           alt="City Center"
                         />
                       )}
+                      {isCrewHere && <img src={Crew} className="image" />}
                       {treeImg && !hex.cityCenter &&(
                         <img
                           src={treeImg}
@@ -382,24 +415,7 @@
             </div>
           ))}
         </div>
-        <div className="mini-map">
-          {map.map((row, rowIndex) => (
-            <div key={rowIndex} className="mini-map-row">
-              {row.map((hex, colIndex) => (
-                <div
-                  key={`${rowIndex}-${colIndex}`}
-                  className="mini-hexagon"
-                  style={{
-                    width: "10px",
-                    height: "6px",
-                    marginTop: hex.col % 2 === 0 ? "5px" : "1px",
-                    backgroundColor: hex.cityCenter ? "red" : "transparent",
-                  }}
-                ></div>
-              ))}
-            </div>
-          ))}
-        </div>
+        
       </div>
       </div>
     );
