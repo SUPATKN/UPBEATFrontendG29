@@ -333,24 +333,7 @@ const Hexagon = ({ map, allPlayer, Me }) => {
             </div>
           ))}
         </div>
-        <div className="mini-map">
-          {map.map((row, rowIndex) => (
-            <div key={rowIndex} className="mini-map-row">
-              {row.map((hex, colIndex) => (
-                <div
-                  key={`${rowIndex}-${colIndex}`}
-                  className="mini-hexagon"
-                  style={{
-                    width: "10px",
-                    height: "6px",
-                    marginTop: hex.col % 2 === 0 ? "5px" : "1px",
-                    backgroundColor: hex.cityCenter ? "red" : "transparent",
-                  }}
-                ></div>
-              ))}
-            </div>
-          ))}
-        </div>
+      
       </div>
     </div>
   );
