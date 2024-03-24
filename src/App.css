@@ -1,4 +1,4 @@
-@import url("https://fonts.cdnfonts.com/css/public-pixel");
+  @import url("https://fonts.cdnfonts.com/css/public-pixel");
 
 .MenuBackground {
   width: 100vw; /* Full width of the viewport */
@@ -56,58 +56,121 @@
   background-attachment: fixed;
 }
 
-.PlayerInfo {
-  background-image: url(/src/Image/3eb349e2eeecd92398b69ba585f6470a.jpg);
-  background-size: 20px;
-  width: 400px;
-  height: 100vh;
-  /* border: #000000 solid; */
-  box-sizing: border-box; /* จัดการให้ขนาดความกว้างและความสูงของขอบนับรวมขอบด้วย */
-  box-shadow: outset 0 0 20px 11px rgba(0, 0, 0, 0.5);
-}
-.white-frame {
-  width: 400px;
-  height: 650px;
-  background-color: white;
-  margin-left: -10%;
-  margin-bottom: 50px;
-  overflow: hidden;
-}
+  .PlayerInfo {
+    background-image: url(/src/Image/3eb349e2eeecd92398b69ba585f6470a.jpg);
+    background-size: 20px;
+    width: 400px;
+    height: 100vh;
+    /* border: #000000 solid; */
+    box-sizing: border-box; /* จัดการให้ขนาดความกว้างและความสูงของขอบนับรวมขอบด้วย */
+    box-shadow: outset 0 0 20px 11px rgba(0, 0, 0, 0.5);
+  }
 
-.map-inside-frame {
-  /* width: 380p;
-  height: 580px; */
-  /* margin-left: -20px; */
-  overflow: auto;
-}
 
-.PlayerName {
-  margin-top: 390px; /* การกำหนดระยะห่างด้านบน */
-  z-index: 1;
-  font-family: "Public Pixel", sans-serif;
-  font-size: 27px;
-  color: white;
-  position: absolute;
-  text-shadow: 0 0px 14px #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-  overflow-wrap: break-word; /* ให้ wrap เมื่อคำเกินความยาว */
-  word-wrap: break-word; /* ให้ wrap เมื่อคำเกินความยาว */
-  white-space: normal; /* ให้เว้นช่องว่างของบรรทัด */
-  word-break: break-all; /* แบ่งคำออกเมื่อคำเกินความยาว */
-}
+  .PlayerName {
+    margin-top: 390px; /* การกำหนดระยะห่างด้านบน */
+    z-index: 1;
+    font-family: "Public Pixel", sans-serif;
+    font-size: 27px;
+    color: white;
+    position: absolute;
+    text-shadow: 0 0px 14px #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    overflow-wrap: break-word; /* ให้ wrap เมื่อคำเกินความยาว */
+    word-wrap: break-word; /* ให้ wrap เมื่อคำเกินความยาว */
+    white-space: normal; /* ให้เว้นช่องว่างของบรรทัด */
+    word-break: break-all; /* แบ่งคำออกเมื่อคำเกินความยาว */
+  }
 
-.hexagon-col {
-  margin-left: -2.4%;
-}
-.hexagon-col-odd {
-  margin-top: 4.27%;
-  margin-left: -2.4%;
-}
-.hexagon-col-container {
-  display: inline-block;
-  margin-top: 5%;
-  margin-right: 200px;
-}
+  .hexagon-col {
+    margin-left: -2.4%;
+  }
+  .hexagon-col-odd {
+    margin-top: 4.27%;
+    margin-left: -2.4%;
+  }
+  .hexagon-col-container {
+    display: inline-block; 
+    margin-top: 5%;
+    margin-right: 200px; 
+  }
 
+  .hexagon-row {
+    display: flex;
+    /* margin-top: -13.5%; */
+  }
+
+  .hexagon1 {
+
+    background-image: url(/src/Image/a.png);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+  }
+  .hexagon1I {
+
+    background-image: url(/src/Image/ai_1.png);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    
+  }
+  .hexagon2 {
+
+    background-image: url(/src/Image/b.png);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+  }  
+  .hexagon2I {
+
+    background-image: url(/src/Image/bi.png);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+  }  
+  .hexagon3 {
+
+    background-image: url(/src/Image/c.png);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+  }  
+  .hexagon4 {
+
+    background-image: url(/src/Image/d.png);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+  }
+  .hexagon-map-container{
+    height: 400px;
+    width: 900px;
+    z-index: -1;
+  }
+  .main-map{
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+ 
+  .Select {
+    margin-top: 7%;
+    justify-content: center;
+    column-gap: 50px;
+    display: flex; /* Change inline-flex to flex */
+    flex-wrap: wrap;
+  }
+  .PlayerLobby {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+  }
 .hexagon-row {
   display: flex;
   margin-top: -8.5%;
@@ -177,130 +240,130 @@
   justify-content: flex-start;
 }
 
-.PlayerImage {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 250px;
-  height: 320px;
-  border: #000000 solid;
-  border-radius: 60px;
-  border-color: white;
-  border-width: 6px;
-  background-color: rgb(9, 66, 46);
-  background-image: url(/src/Image/54012268766885.5b68cd4e27dcf.png);
-  background-position: center;
-  background-size: 170%;
-  background-repeat: no-repeat;
-}
-.PlayerImageMe {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 250px;
-  height: 320px;
-  border: #000000 solid;
-  border-radius: 60px;
-  border-color: rgb(157, 255, 0);
-  border-width: 6px;
-  background-color: rgb(213, 1, 1);
-  background-image: url(/src/Image/54012268766885.5b68cd4e27dcf.png);
-  background-position: center;
-  background-size: 170%;
-  background-repeat: no-repeat;
-}
+  .PlayerImage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 320px;
+    border: #000000 solid;
+    border-radius: 60px;
+    border-color: white;
+    border-width: 6px;
+    background-color: rgb(9, 66, 46);
+    background-image: url(/src/Image/54012268766885.5b68cd4e27dcf.png);
+    background-position: center;
+    background-size: 170%;
+    background-repeat: no-repeat;
+  }
+  .PlayerImageMe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 320px;
+    border: #000000 solid;
+    border-radius: 60px;
+    border-color: rgb(157, 255, 0);
+    border-width: 6px;
+    background-color: rgb(213, 1, 1);
+    background-image: url(/src/Image/54012268766885.5b68cd4e27dcf.png);
+    background-position: center;
+    background-size: 170%;
+    background-repeat: no-repeat;
+  }
 
-.StartGame {
-  margin-top: 1%;
-  display: flex;
-  justify-content: center;
-}
-.host {
-  font-family: "Public Pixel", sans-serif;
-  font-size: 25px;
-  color: white;
-  position: absolute;
-  margin-bottom: 270px;
-  z-index: 1;
-}
-.ReadyStatus {
-  font-family: "Public Pixel", sans-serif;
-  font-size: 20px;
-  color: white;
-  position: absolute;
-  margin-left: 1%;
-  margin-top: 250px;
-  z-index: 1;
-  text-shadow: 0 0px 14px #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-}
-.UnreadyStatus {
-  font-family: "Public Pixel", sans-serif;
-  font-size: 20px;
-  color: white;
-  position: absolute;
-  margin-left: 1%;
-  margin-top: 250px;
-  z-index: 1;
-  text-shadow: 0 0px 14px #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-}
+  .StartGame {
+    margin-top: 1%;
+    display: flex;
+    justify-content: center;
+  }
+  .host {
+    font-family: "Public Pixel", sans-serif;
+    font-size: 25px;
+    color: white;
+    position: absolute;
+    margin-bottom: 270px;
+    z-index: 1;
+  }
+  .ReadyStatus {
+    font-family: "Public Pixel", sans-serif;
+    font-size: 20px;
+    color: white;
+    position: absolute;
+    margin-left: 1%;
+    margin-top: 250px;
+    z-index: 1;
+    text-shadow: 0 0px 14px #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  }
+  .UnreadyStatus {
+    font-family: "Public Pixel", sans-serif;
+    font-size: 20px;
+    color: white;
+    position: absolute;
+    margin-left: 1%;
+    margin-top: 250px;
+    z-index: 1;
+    text-shadow: 0 0px 14px #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  }
 
-.Unready {
-  width: 250px;
-  height: 320px;
-  background-color: #000000;
-  border-radius: 55px;
-  opacity: 70%;
-}
-.Ready {
-  width: 250px;
-  height: 320px;
-  background-color: #000000;
-  border-radius: 60px;
-  opacity: 0%;
-}
-.ReadyButton {
-  margin-top: 5%;
-  display: flex;
-  justify-content: center;
-  color: wheat;
-}
-.image-container {
-  position: relative;
-  width: 70px;
-  height: 70px;
-}
+  .Unready {
+    width: 250px;
+    height: 320px;
+    background-color: #000000;
+    border-radius: 55px;
+    opacity: 70%;
+  }
+  .Ready {
+    width: 250px;
+    height: 320px;
+    background-color: #000000;
+    border-radius: 60px;
+    opacity: 0%;
+  }
+  .ReadyButton {
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+    color: wheat;
+  }
+  .image-container {
+    position: relative;
+    width: 70px;
+    height: 70px;
+  }
 
-.image {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
+  .image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
 
-/* กำหนดภาพของ City Center มีลำดับความสำคัญสูงกว่าภาพของ Crew */
-.hexagon-even .image-container img:first-child {
-  z-index: 0;
-}
+  /* กำหนดภาพของ City Center มีลำดับความสำคัญสูงกว่าภาพของ Crew */
+  .hexagon-even .image-container img:first-child {
+    z-index: 0;
+  }
 
-/* กำหนดภาพของ Crew มีลำดับความสำคัญต่ำกว่าภาพของ City Center */
-.hexagon-even .image-container img:last-child {
-  z-index: 1;
-}
+  /* กำหนดภาพของ Crew มีลำดับความสำคัญต่ำกว่าภาพของ City Center */
+  .hexagon-even .image-container img:last-child {
+    z-index: 1;
+  }
 
-.hexagon .image-container img:first-child {
-  z-index: 0;
-}
+  .hexagon .image-container img:first-child {
+    z-index: 0;
+  }
 
-/* กำหนดภาพของ Crew มีลำดับความสำคัญต่ำกว่าภาพของ City Center */
-.hexagon .image-container img:last-child {
-  z-index: 1;
-}
+  /* กำหนดภาพของ Crew มีลำดับความสำคัญต่ำกว่าภาพของ City Center */
+  .hexagon .image-container img:last-child {
+    z-index: 1;
+  }
 
-.Menu {
-  width: 200px;
-  margin-top: 30px;
-  margin-left: 200px;
+  .Menu {
+    width: 200px;
+    margin-top: 30px;
+    margin-left: 200px;
 
   display: block;
   justify-content: center;
@@ -334,22 +397,22 @@
   display: none;
 }
 
-.Content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.BoxContainer {
-  margin-top: 12%;
-}
-.container {
-  margin: 50px;
-  display: block;
-  width: 400px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
+  .Content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .BoxContainer {
+    margin-top: 12%;
+  }
+  .container {
+    margin: 50px;
+    display: block;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
 
 .font {
   font-family: "Public Pixel", sans-serif;
@@ -386,263 +449,272 @@
   margin-left: 110px;
 }
 
-.pixel,
-.pixel2 {
-  font-size: 25px;
-  color: white;
-  height: auto;
-  margin: 10px;
-  font-family: "VT323";
+  .pixel,
+  .pixel2 {
+    font-size: 25px;
+    color: white;
+    height: auto;
+    margin: 10px;
+    font-family: "VT323";
 
-  position: relative;
-  display: inline-block;
-  vertical-align: top;
-  text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    text-transform: uppercase;
 
-  cursor: pointer;
+    cursor: pointer;
 
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
 
-.pixel:active,
-.pixel2:active {
-  top: 2px;
-  color: rgb(24, 137, 4);
-}
+  .pixel:active,
+  .pixel2:active {
+    top: 2px;
+    color: rgb(24, 137, 4);
+  }
 
-.pixel {
-  line-height: 0;
+  .pixel {
+    line-height: 0;
 
-  image-rendering: optimizeSpeed;
-  image-rendering: -moz-crisp-edges; /* Firefox */
-  image-rendering: -o-crisp-edges; /* Opera */
-  image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
-  image-rendering: crisp-edges;
-  -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
+    image-rendering: optimizeSpeed;
+    image-rendering: -moz-crisp-edges; /* Firefox */
+    image-rendering: -o-crisp-edges; /* Opera */
+    image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
 
-  border-style: solid;
-  border-width: 20px;
-  -moz-border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
-  -webkit-border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
-  -o-border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
-  border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
-}
+    border-style: solid;
+    border-width: 20px;
+    -moz-border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
+    -webkit-border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
+    -o-border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
+    border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
+  }
 
-.pixel p {
-  display: inline-block;
-  vertical-align: top;
-  position: relative;
-  width: auto;
-  text-align: center;
-  margin: -20px -20px;
-  line-height: 20px;
-  padding: 10px 20px;
+  .pixel p {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    width: auto;
+    text-align: center;
+    margin: -20px -20px;
+    line-height: 20px;
+    padding: 10px 20px;
 
-  background: #000000;
-  background: linear-gradient(135deg, transparent 10px, #000000 0) top left,
-    linear-gradient(225deg, transparent 10px, #000000 0) top right,
-    linear-gradient(315deg, transparent 10px, #000000 0) bottom right,
-    linear-gradient(45deg, transparent 10px, #000000 0) bottom left;
-  background-size: 50% 50%;
-  background-repeat: no-repeat;
-  background-image: radial-gradient(
-      circle at 0 0,
-      rgba(204, 0, 0, 0) 14px,
-      #000000 15px
-    ),
-    radial-gradient(circle at 100% 0, rgba(204, 0, 0, 0) 14px, #000000 15px),
-    radial-gradient(circle at 100% 100%, rgba(204, 0, 0, 0) 14px, #000000 15px),
-    radial-gradient(circle at 0 100%, rgba(204, 0, 0, 0) 14px, #000000 15px);
-}
+    background: #000000;
+    background: linear-gradient(135deg, transparent 10px, #000000 0) top left,
+      linear-gradient(225deg, transparent 10px, #000000 0) top right,
+      linear-gradient(315deg, transparent 10px, #000000 0) bottom right,
+      linear-gradient(45deg, transparent 10px, #000000 0) bottom left;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    background-image: radial-gradient(
+        circle at 0 0,
+        rgba(204, 0, 0, 0) 14px,
+        #000000 15px
+      ),
+      radial-gradient(circle at 100% 0, rgba(204, 0, 0, 0) 14px, #000000 15px),
+      radial-gradient(circle at 100% 100%, rgba(204, 0, 0, 0) 14px, #000000 15px),
+      radial-gradient(circle at 0 100%, rgba(204, 0, 0, 0) 14px, #000000 15px);
+  }
 
-.pixel2 {
-  position: relative;
-  display: block;
-  margin: 10px;
-  font-family: "Public Pixel", sans-serif;
-  text-transform: uppercase;
+  .pixel2 {
+    position: relative;
+    display: block;
+    margin: 10px;
+    font-family: "Public Pixel", sans-serif;
+    text-transform: uppercase;
 
-  font-size: 15px;
-  color: rgb(255, 255, 255);
-}
+    font-size: 15px;
+    color: rgb(255, 255, 255);
+  }
 
-.pixel2::before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 10px;
-  bottom: 10px;
-  left: -10px;
-  right: -10px;
-  background: black;
-  z-index: -1;
-}
+  .pixel2::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    left: -10px;
+    right: -10px;
+    background: black;
+    z-index: -1;
+  }
 
-.pixel2::after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 4px;
-  bottom: 4px;
-  left: -6px;
-  right: -6px;
-  background: black;
-  z-index: -1;
-}
+  .pixel2::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 4px;
+    bottom: 4px;
+    left: -6px;
+    right: -6px;
+    background: black;
+    z-index: -1;
+  }
 
-.pixel2 {
-  padding: 10px 10px;
-  position: relative;
-  background: black;
-  width: 200px;
-  height: 50px;
-  z-index: 2;
-}
-.pixel2Start {
-  position: relative;
-  display: block;
-  margin: 10px;
-  font-family: "Public Pixel", sans-serif;
-  text-transform: uppercase;
+  .pixel2 {
+    padding: 10px 10px;
+    position: relative;
+    background: black;
+    width: 200px;
+    height: 50px;
+    z-index: 2;
+  }
+  .pixel2Start {
+    position: relative;
+    display: block;
+    margin: 10px;
+    font-family: "Public Pixel", sans-serif;
+    text-transform: uppercase;
 
-  font-size: 15px;
-  color: rgb(81, 76, 76);
-}
-.pixelStart,
-.pixel2Start {
-  font-size: 25px;
-  color: white;
-  height: auto;
-  margin: 10px;
-  font-family: "VT323";
+    font-size: 15px;
+    color: rgb(81, 76, 76);
+  }
+  .pixelStart,
+  .pixel2Start {
+    font-size: 25px;
+    color: white;
+    height: auto;
+    margin: 10px;
+    font-family: "VT323";
 
-  position: relative;
-  display: inline-block;
-  vertical-align: top;
-  text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    text-transform: uppercase;
 
-  cursor: pointer;
+    cursor: pointer;
 
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
 
-.pixelStart:active,
-.pixel2Start:active {
-  top: 2px;
-}
+  .pixelStart:active,
+  .pixel2Start:active {
+    top: 2px;
+  }
 
-.pixelStart {
-  line-height: 0;
+  .pixelStart {
+    line-height: 0;
 
-  image-rendering: optimizeSpeed;
-  image-rendering: -moz-crisp-edges; /* Firefox */
-  image-rendering: -o-crisp-edges; /* Opera */
-  image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
-  image-rendering: crisp-edges;
-  -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
+    image-rendering: optimizeSpeed;
+    image-rendering: -moz-crisp-edges; /* Firefox */
+    image-rendering: -o-crisp-edges; /* Opera */
+    image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
 
-  border-style: solid;
-  border-width: 20px;
-  -moz-border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
-  -webkit-border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
-  -o-border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
-  border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
-}
+    border-style: solid;
+    border-width: 20px;
+    -moz-border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
+    -webkit-border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
+    -o-border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
+    border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
+  }
 
-.pixelStart p {
-  display: inline-block;
-  vertical-align: top;
-  position: relative;
-  width: auto;
-  text-align: center;
-  margin: -20px -20px;
-  line-height: 20px;
-  padding: 10px 20px;
+  .pixelStart p {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    width: auto;
+    text-align: center;
+    margin: -20px -20px;
+    line-height: 20px;
+    padding: 10px 20px;
 
-  background: #000000;
-  background: linear-gradient(135deg, transparent 10px, #000000 0) top left,
-    linear-gradient(225deg, transparent 10px, #000000 0) top right,
-    linear-gradient(315deg, transparent 10px, #000000 0) bottom right,
-    linear-gradient(45deg, transparent 10px, #000000 0) bottom left;
-  background-size: 50% 50%;
-  background-repeat: no-repeat;
-  background-image: radial-gradient(
-      circle at 0 0,
-      rgba(204, 0, 0, 0) 14px,
-      #000000 15px
-    ),
-    radial-gradient(circle at 100% 0, rgba(204, 0, 0, 0) 14px, #000000 15px),
-    radial-gradient(circle at 100% 100%, rgba(204, 0, 0, 0) 14px, #000000 15px),
-    radial-gradient(circle at 0 100%, rgba(204, 0, 0, 0) 14px, #000000 15px);
-}
+    background: #000000;
+    background: linear-gradient(135deg, transparent 10px, #000000 0) top left,
+      linear-gradient(225deg, transparent 10px, #000000 0) top right,
+      linear-gradient(315deg, transparent 10px, #000000 0) bottom right,
+      linear-gradient(45deg, transparent 10px, #000000 0) bottom left;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    background-image: radial-gradient(
+        circle at 0 0,
+        rgba(204, 0, 0, 0) 14px,
+        #000000 15px
+      ),
+      radial-gradient(circle at 100% 0, rgba(204, 0, 0, 0) 14px, #000000 15px),
+      radial-gradient(circle at 100% 100%, rgba(204, 0, 0, 0) 14px, #000000 15px),
+      radial-gradient(circle at 0 100%, rgba(204, 0, 0, 0) 14px, #000000 15px);
+  }
 
-.pixel2Start {
-  position: relative;
-  display: block;
-  margin: 10px;
-  font-family: "Public Pixel", sans-serif;
-  text-transform: uppercase;
+  .pixel2Start {
+    position: relative;
+    display: block;
+    margin: 10px;
+    font-family: "Public Pixel", sans-serif;
+    text-transform: uppercase;
 
-  font-size: 15px;
-  color: rgb(95, 93, 93);
-}
+    font-size: 15px;
+    color: rgb(95, 93, 93);
+  }
 
-.pixel2Start::before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 10px;
-  bottom: 10px;
-  left: -10px;
-  right: -10px;
-  background: black;
-  z-index: -1;
-}
+  .pixel2Start::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    left: -10px;
+    right: -10px;
+    background: black;
+    z-index: -1;
+  }
 
-.pixel2Start::after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 4px;
-  bottom: 4px;
-  left: -6px;
-  right: -6px;
-  background: black;
-  z-index: -1;
-}
+  .pixel2Start::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 4px;
+    bottom: 4px;
+    left: -6px;
+    right: -6px;
+    background: black;
+    z-index: -1;
+  }
 
-.pixel2Start {
-  padding: 10px 10px;
-  position: relative;
-  background: black;
-  width: 200px;
-  height: 50px;
-  z-index: 2;
-}
-.UpbeatTitle {
-  font-size: 50px;
-  margin-top: 100px;
-  margin-left: 180px;
-  font-family: "Public Pixel", sans-serif;
-  color: #ffffff;
-  text-shadow: 0 0px 14px #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-}
+  .pixel2Start {
+    padding: 10px 10px;
+    position: relative;
+    background: black;
+    width: 200px;
+    height: 50px;
+    z-index: 2;
+  }
+  .UpbeatTitle {
+    font-size: 50px;
+    margin-top: 100px;
+    margin-left: 180px;
+    margin-bottom: 20px;
+    font-family: "Public Pixel", sans-serif;
+    color: #ffffff;
+    text-shadow: 0 0px 14px #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  }
 
-.UpbeatTitleDis {
-  font-size: 20px;
-  margin-top: 7px;
-  margin-left: 180px;
-  font-family: "Public Pixel", sans-serif;
-  color: #ffffff;
-  text-shadow: 0 0px 14px #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-}
+  .UpbeatTitleDis {
+    font-size: 20px;
+    margin-top: 7px;
+    margin-left: 180px;
+    font-family: "Public Pixel", sans-serif;
+    color: #ffffff;
+    text-shadow: 0 0px 14px #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  }
+  .PlayerStatus{
+    padding: 20px;
+  }
+  
+  .PlayerStatusIn{
+    padding: 10px ;
+  }
+  
