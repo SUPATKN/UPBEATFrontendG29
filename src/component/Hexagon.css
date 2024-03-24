@@ -14,11 +14,13 @@
   stroke-width: 2px; /* Adjust thickness as needed */
 }
 .mini-map {
-  width: 300px;
+  width: 200px;
+  height: 200px;
   border: 6px solid #434343;
   border-radius: 2px;
   background-color: #ffffff;
   padding:3px;
+  overflow: scroll;
 }
 
 .mini-map-row {
@@ -26,6 +28,7 @@
 }
 
 .mini-hexagon {
+
   border: 1px solid #ababab;
   margin: 1px;
 }
