@@ -59,13 +59,12 @@ const Hexagon = ({ map, allPlayer, Me }) => {
   return (
     <div
       style={{
-        width: "900px",
-        height: "450px",
+        width: "765px",
+        height: "500px",
         // marginRight: "100px",
         // marginTop: "50px",
-        border: "2px solid black",
-        overflow: "hidden",
-        background: "#ffffff",
+        border: "6px solid  #434343",
+        overflow: "hidden"
       }}
     >
       <div
@@ -91,7 +90,6 @@ const Hexagon = ({ map, allPlayer, Me }) => {
       >
         <div
           className="main-map"
-          style={{ width: "100%", height: "100%", paddingLeft: "100px"}}
         >
           {map.map((row, rowIndex) => (
             <div key={rowIndex} className="hexagon-row">
