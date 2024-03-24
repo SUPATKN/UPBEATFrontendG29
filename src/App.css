@@ -28,7 +28,7 @@
 
 .Gameplay {
   width: 100%;
-  height: inherit;
+  height: 0 px;
 }
 .Warning{
   font-size: 14px;
@@ -42,10 +42,13 @@
   width: 100%;
   position: absolute;
   position: fixed;
-  height: 100%;
+  height: 90%;
   justify-content: space-between;
 }
 .GameplayBackground-left {
+  justify-content: center;
+  display: flex;
+  align-items: center;
   float: left;
   width: 73%;
   height: 100%;
@@ -57,7 +60,6 @@
   background-size: 20px;
   width: 27%;
   height: 100%;
-  border: 1px solid rgb(247, 255, 0);
 }
 
 .GameplayBackground-top {
@@ -68,17 +70,27 @@
   background-repeat: repeat;
   background-position: center;
   background-attachment: fixed; /* ติดตามหน้าจอ */
-  justify-content: space-between;
   align-items: center;
   position: fixed;
   display: flex;
+  justify-content: space-between;
   top: 0;
-  border: 1px solid red;
   z-index: 1;
 }
+
+.GameplayBackground-top-name{
+  /* border: 1px solid red; */
+}
+
+.GameplayBackground-top-turn{
+  width: 910px;
+  display: flex;
+  justify-content: space-between;
+}
+
 .GameplayBackground-bottom {
   width: 100vw; /* Full width of the viewport */
-  height: 10vh; /* Full height of the viewport */
+  height: 8vh; /* Full height of the viewport */
   background-image: url(/src/Image/3eb349e2eeecd92398b69ba585f6470a.jpg);
   background-size: 20px; /* ขยายพื้นหลังเต็มพื้นที่ของ viewport */
   background-repeat: repeat;
@@ -179,13 +191,14 @@
   background-repeat: no-repeat;
 }
 .hexagon-map-container {
-  height: 400px;
-  width: 900px;
+  height: 500px;
+  width: 100%;
 }
 .main-map {
-  position: relative;
   width: 100%;
   height: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
 .Select {
@@ -395,6 +408,9 @@
 .submitBot {
   margin-top: 30px;
   margin-left: 110px;
+}
+.submitBot-Gameplay{
+  display: block;
 }
 .submitBotPlan {
   display: block;
@@ -663,15 +679,14 @@
 }
 
 .PlayerStatus {
-  position: absolute;
-  display: block;
-  align-items: center;
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
   padding: 10px;
-  padding-top: 50px;
+  padding-top: 23px;
   top: 0;
   right: 0;
   color: #ffffff;
+  border: 1px solid red;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
@@ -689,4 +704,40 @@
   color: #ffffff;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   height: 150px;
+}
+
+.Plan{ 
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  z-index: 999;
+  position:absolute;
+  background-color: #838383;
+}
+
+.PlanBoard{
+  z-index: 1;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 500px;
+  height: 520px;
+  border: 6px solid #434343;
+  border-radius: 2px;
+}
+
+.PlanArea{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.TextArea{
+  width: 350px;
+  height: 350px;
+  border: 6px solid #434343;
+  border-radius: 2px;
+  resize: none;
+  line-height: 22px;
 }
