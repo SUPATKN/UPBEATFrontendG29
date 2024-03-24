@@ -31,7 +31,8 @@ const ConfirmPlan = ({
           className={"pixel2"}
           onClick={() => {
             handleSubmit();
-          }}
+            click()
+      }}
         >
           Submit
         </button>
