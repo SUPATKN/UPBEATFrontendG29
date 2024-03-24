@@ -38,6 +38,7 @@
   
 }
 .Gameplay-Main {
+  margin-top: 34px;
   display: flex;
   width: 100%;
   position: absolute;
@@ -50,13 +51,15 @@
   
 }
 .GameplayBackground-left {
+  background-image: url(/src/Image/den-pixelart-watertiles.gif);
+  background-size: 180px;
   justify-content: center;
   display: flex;
-  align-items: center;
+  padding-top:12px ;
   float: left;
   width: 73%;
   height: 100%;
-  border: 1px solid red;
+  border: 8px solid #434343;
 }
 
 .GameplayBackground-right {
@@ -64,10 +67,11 @@
   background-size: 20px;
   width: 27%;
   height: 100%;
+  border-right: 8px solid #434343;
 }
 
 .GameplayBackground-top {
-  width: 100%; /* Full width of the viewport */
+  width: 99%; /* Full width of the viewport */
   height: 8vh; /* Full height of the viewport */
   background-image: url(/src/Image/3eb349e2eeecd92398b69ba585f6470a.jpg);
   background-size: 20px; /* ขยายพื้นหลังเต็มพื้นที่ของ viewport */
@@ -80,6 +84,7 @@
   justify-content: space-between;
   top: 0;
   z-index: 1;
+  border: 8px solid #434343;
 }
 
 .GameplayBackground-top-name{
@@ -93,7 +98,7 @@
 }
 
 .GameplayBackground-bottom {
-  width: 100vw; /* Full width of the viewport */
+  width: 99%; /* Full width of the viewport */
   height: 8vh; /* Full height of the viewport */
   background-image: url(/src/Image/3eb349e2eeecd92398b69ba585f6470a.jpg);
   background-size: 20px; /* ขยายพื้นหลังเต็มพื้นที่ของ viewport */
@@ -102,7 +107,11 @@
   background-attachment: fixed; /* ติดตามหน้าจอ */
   position: fixed;
   bottom: 0;
-  border: 1px solid red;
+  border: 8px solid #434343;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .PlayerInfo {
@@ -455,7 +464,6 @@
   font-size: 25px;
   color: white;
   height: auto;
-  margin: 10px;
   font-family: "VT323";
 
   position: relative;
@@ -716,11 +724,11 @@
   display: flex;
   flex-direction: column;
   padding: 10px;
-  padding-top: 23px;
+  padding-top:38px;
+
   top: 0;
   right: 0;
   color: #ffffff;
-  border: 1px solid red;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
@@ -731,6 +739,19 @@
   position: relative;
   color: #ffffff;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.PlayerStatusOP{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px 10px 20px;
+  position: relative;
+  color: #ffffff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+.PlayerStatusOP span{
+  padding-right: 100px;
 }
 
 .PlayerStatusIn textarea {
@@ -755,7 +776,7 @@
   align-items: center;
   display: flex;
   width: 500px;
-  height: 520px;
+  height: 530px;
   border: 6px solid #434343;
   border-radius: 2px;
 }
@@ -774,4 +795,60 @@
   border-radius: 2px;
   resize: none;
   line-height: 22px;
+}
+
+.opponent-player{
+    background-image: url(Image/pngwing.com.png);
+    background-size: 25px; /* ปรับขนาดรูปตามต้องการ */
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 35px; /* ปรับระยะห่างรูปกับข้อความ */
+}
+
+.PicSword image{
+  background-image: url(Image/sword.png);
+  background-size: 16px; /* ปรับขนาดรูปตามต้องการ */
+  background-repeat: no-repeat;
+  background-position: right center;
+  padding-right: 30px; /* ปรับระยะห่างรูปกับข้อความ */
+}
+
+.PicCoin{
+    background-image: url(Image/coin.com.png);
+    background-size: 24px; /* ปรับขนาดรูปตามต้องการ */
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 28px; /* ปรับระยะห่างรูปกับข้อความ */
+}
+
+.PicCity{
+  background-image: url(Image/kisspng-pixel-art-portable-network-graphics-transparency-i-abigaelampaposs-gallery-5d3430c123fcb7.5463292415637014411474.png);
+  background-size: 24px; /* ปรับขนาดรูปตามต้องการ */
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-left: 28px; /* ปรับระยะห่างรูปกับข้อความ */
+}
+
+.PicRegion{
+  background-image: url(Image/ai0.png);
+  background-size: 20px; /* ปรับขนาดรูปตามต้องการ */
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-left: 28px; /* ปรับระยะห่างรูปกับข้อความ */
+}
+
+.MyTurn{
+  color:chartreuse;
+}
+.OtherTurn{
+  color: goldenrod;
+}
+
+.Gamestate{
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+  line-height: 15px;
+  font-size: 13px;
+  color:rgb(188, 247, 255)
 }

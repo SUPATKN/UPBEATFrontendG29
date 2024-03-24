@@ -20,6 +20,8 @@
   import "./Hexagon.css";
   import HexRed from "../Image/hexRed.png"
   import Crew from "../Image/pngtree-viking-cartoon-character-sprite-sheet-animation-for-2d-rpg-game-png-image_6328460.png"
+  import HexRed from "../Image/hexRed.png"
+  import Crew from "../Image/pngtree-viking-cartoon-character-sprite-sheet-animation-for-2d-rpg-game-png-image_6328460.png"
 
 const Hexagon = ({ map, allPlayer, Me }) => {
   const [zoomed, setZoomed] = useState(false);
@@ -61,11 +63,11 @@ const Hexagon = ({ map, allPlayer, Me }) => {
   return (
     <div className="hexagon-map-container"
       style={{
-        width: "900px",
-        height: "450px",
-        // marginRight: "100px",
-        // marginTop: "50px",
-        overflow: "hidden",
+        width: "765px",
+        height: "500px",
+        marginTop: "14px",
+        border: "6px solid  #434343",
+        overflow: "hidden"
       }}
     >
       <div
@@ -90,7 +92,6 @@ const Hexagon = ({ map, allPlayer, Me }) => {
       >
         <div
           className="main-map"
-          style={{ width: "100%", height: "100%", paddingLeft: "100px"}}
         >
           {map.map((row, rowIndex) => (
             <div key={rowIndex} className="hexagon-row">

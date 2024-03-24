@@ -176,11 +176,11 @@ const [revSec, setRevSec] = useState(0);
     }
   };
 
-  useEffect(() => {
-    if (allInitial) {
-      DoPlan();
-    }
-  }, [allInitial]);
+  // useEffect(() => {
+  //   if (allInitial) {
+  //     DoPlan();
+  //   }
+  // }, [allInitial]);
 
   useEffect(() => {
     setisAction(false);
@@ -231,7 +231,7 @@ const [revSec, setRevSec] = useState(0);
         <div className="font GameplayBackground-top-turn">
        
           <div className="PlayerStatusIn" > {GameState && <div> GAME TURN : {GameState.totalTurn}</div>}</div>
-          <div className="PlayerStatusIn" >TURN : {whoTurn === MyName ? MyName : whoTurn}</div>
+          {whoTurn === MyName ? <div className="PlayerStatusIn MyTurn">MY TURN</div> : <div className="PlayerStatusIn OtherTurn">OTHER PLAYER TURN | TURN : {whoTurn} </div>}
         </div>
 
       </div>
@@ -249,6 +249,7 @@ const [revSec, setRevSec] = useState(0);
                 intMin={intMin}
                 intSec={intSec}
                 initial={allInitial}
+                click={PlanArea}
               />
             )}
           </div>
@@ -282,43 +283,52 @@ const [revSec, setRevSec] = useState(0);
                     </div>
                   ))}
                 </div>
+                
 
-                <div className="submitBot-Gameplay ">
+                <div className="font Gamestate">
+                    {GameState && GameState.totalTurn < 2  && <div>
+                      {allInitial 
+                      ? "[ GAME START ]"
+                      : "PLANNING INITIAL PLAN ..."}
+                      </div>}
+                    <br />
+                    
+                    {allInitial && <div>
+                    {isAction ? "[ DOING ACTION ... ]" : ""}
+                    </div>}
+                  </div>
+
+                <div className="submitBot-Gameplay PicSword">
                   <button className={"pixel2"} onClick={PlanSubmit}>
-                    RUN PLAN
+                   RUN PLAN<image x></image>
                   </button>
-                  <button className={"pixel2"} onClick={PlanArea}>
+                    
+                  <button className={"pixel2 "} onClick={PlanArea}>
                     CHANGE PLAN
                   </button>
-                
                   
-                  {allInitial
-                    ? "Game Start!!!"
-                    : "waiting other player plan initial plan"}
-                  <br />
-                  {isAction ? "Doing action..." : ""}
                 </div>
               </div>
 
               <div>
                 <div id="budget">
-                  <div className="font PlayerStatusIn" id="budget-value">
+                  <div className="font PlayerStatusIn PicCoin" id="budget-value">
                     {" "}
-                    BUDGET : {Me && Me.budget}
+                    <image c></image> BUDGET : {Me && Me.budget}
                   </div>
                 </div>
 
                 <div id="citycenter">
-                  <div className="font PlayerStatusIn" id="citycenter">
+                  <div className="font PlayerStatusIn PicCity" id="citycenter">
                     {" "}
-                    CITY CENTER : {Me && Me.cityCenter.row + 1} ,{" "}
+                    <image c></image> CITY CENTER : {Me && Me.cityCenter.row + 1} ,{" "}
                     {Me && Me.cityCenter.col + 1}{" "}
                   </div>
                 </div>
 
                 <div id="totolRegion">
-                  <div className="font PlayerStatusIn" id="xp-value">
-                    TOTOL REGION : {Me && Me.totolRegion}{" "}
+                  <div className="font PlayerStatusIn PicRegion" id="xp-value">
+                  <image c></image> TOTOL REGION : {Me && Me.totolRegion}{" "}
                   </div>
                 </div>
 
@@ -327,7 +337,21 @@ const [revSec, setRevSec] = useState(0);
             </div>
         </div>
       </div>
-      <div className="GameplayBackground-bottom"></div>
+
+      /*----------- FOOTER SECTION -----------*/
+      <div className="GameplayBackground-bottom">
+        <div className="font PlayerStatusOP">
+        {allPlayers
+          .filter(player => player.name !== MyName)
+          .map((player) => (
+            <span className="opponent-player">
+              <image u></image> OPPONENT: {player.name}
+              <br />
+            </span>
+          ))} 
+        </div>
+
+      </div>
     </div>
   );
 };
