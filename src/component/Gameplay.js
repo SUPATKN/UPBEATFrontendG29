@@ -15,12 +15,13 @@ const Gameplay = () => {
   const [allInitial, setAllInitial] = useState(false);
   const [whoTurn, setWhoTurn] = useState(null);
   const [PlanClick, setPlanClick] = useState(true);
+  const [click, setClick] = useState(false);
   const [isAction, setisAction] = useState(false);
   const [Me, setMe] = useState(null);
   const [intMin, setIntMin] = useState(5);
-const [intSec, setIntSec] = useState(0);
-const [revMin, setRevMin] = useState(0);
-const [revSec, setRevSec] = useState(0);
+  const [intSec, setIntSec] = useState(0);
+  const [revMin, setRevMin] = useState(0);
+  const [revSec, setRevSec] = useState(0);
   const name = useParams();
   const MyName = name["name"];
 
@@ -35,8 +36,13 @@ const [revSec, setRevSec] = useState(0);
     }
   };
 
+  // useEffect(() => {
+  //   setClick(false);
+  // }, [click]);
+
   const PlanArea = () => {
     setPlanClick(!PlanClick);
+    console.log("Click :", click);
     console.log("Plan Click : ", PlanClick);
   };
 
@@ -97,13 +103,11 @@ const [revSec, setRevSec] = useState(0);
     }
   };
 
-
   const AlertLose = () => {
-      alert("Some Player Lose") 
-      fetchAllPlayers()
-      fetchGameState()
-  }
-
+    alert("Some Player Lose");
+    fetchAllPlayers();
+    fetchGameState();
+  };
 
   useEffect(() => {
     const socket = new SockJS("http://localhost:8080/ws");
@@ -119,14 +123,12 @@ const [revSec, setRevSec] = useState(0);
     fetchAllPlayers();
     fetchMap();
     fetchGameState();
-    if(GameState){
-      setIntMin(GameState.init_plan_min)
-      setIntSec(GameState.init_plan_sec)
-      setRevMin(GameState.plan_rev_min)
-      setRevSec(GameState.plan_rev_sec) 
+    if (GameState) {
+      setIntMin(GameState.init_plan_min);
+      setIntSec(GameState.init_plan_sec);
+      setRevMin(GameState.plan_rev_min);
+      setRevSec(GameState.plan_rev_sec);
     }
-      
-    
   }, []);
 
   const fetchMap = async () => {
@@ -152,25 +154,22 @@ const [revSec, setRevSec] = useState(0);
       });
       console.log(response.data);
       setGamestate(response.data);
-      
+
       let turn = response.data.turn.name;
       setWhoTurn(turn);
-      let intMin = response.data.init_plan_min
-      let intSec = response.data.init_plan_sec
-      let RevMin = response.data.plan_rev_min
-      let RevSec = response.data.plan_rev_sec
-      setIntMin(GameState.init_plan_min)
-      setIntSec(GameState.init_plan_sec)
-      setRevMin(GameState.plan_rev_min)
-      setRevSec(GameState.plan_rev_sec) 
+      let intMin = response.data.init_plan_min;
+      let intSec = response.data.init_plan_sec;
+      let RevMin = response.data.plan_rev_min;
+      let RevSec = response.data.plan_rev_sec;
+      setIntMin(GameState.init_plan_min);
+      setIntSec(GameState.init_plan_sec);
+      setRevMin(GameState.plan_rev_min);
+      setRevSec(GameState.plan_rev_sec);
 
-      setIntMin(response.data.init_plan_min)
-      setIntSec(response.data.init_plan_sec)
-      setRevMin(GameState.plan_rev_min)
-      setRevSec(GameState.plan_rev_sec) 
-      
-      
-
+      setIntMin(response.data.init_plan_min);
+      setIntSec(response.data.init_plan_sec);
+      setRevMin(GameState.plan_rev_min);
+      setRevSec(GameState.plan_rev_sec);
     } catch (error) {
       console.error("Error fetching players:", error);
     }
@@ -216,29 +215,29 @@ const [revSec, setRevSec] = useState(0);
     console.log(Map);
   }, []);
 
-
-
   return (
     <div className="Gameplay">
-
       /*----------- TOP SECTION -----------*/
       <div className="GameplayBackground-top">
-
-        <div className="font PlayerStatusIn GameplayBackground-top-name" id="player_name">
+        <div
+          className="font PlayerStatusIn GameplayBackground-top-name"
+          id="player_name"
+        >
           PLAYER NAME : <span id="playername">{Me && Me.name}</span>
         </div>
 
         <div className="font GameplayBackground-top-turn">
-       
-          <div className="PlayerStatusIn" > {GameState && <div> GAME TURN : {GameState.totalTurn}</div>}</div>
-          <div className="PlayerStatusIn" >TURN : {whoTurn === MyName ? MyName : whoTurn}</div>
+          <div className="PlayerStatusIn">
+            {" "}
+            {GameState && <div> GAME TURN : {GameState.totalTurn}</div>}
+          </div>
+          <div className="PlayerStatusIn">
+            TURN : {whoTurn === MyName ? MyName : whoTurn}
+          </div>
         </div>
-
       </div>
-
       /*----------- MAIN SECTION -----------*/
       <div className="Gameplay-Main">
-
         <div className="GameplayBackground-left">
           <div className="Plan">
             {PlanClick && (
@@ -249,18 +248,18 @@ const [revSec, setRevSec] = useState(0);
                 intMin={intMin}
                 intSec={intSec}
                 initial={allInitial}
+                click={click}
               />
             )}
           </div>
-          
-          <Hexagon map={Map} allPlayer={allPlayers} Me={MyName} />        
+
+          <Hexagon map={Map} allPlayer={allPlayers} Me={MyName} />
         </div>
-          
 
         <div className="GameplayBackground-right">
           <div>
             <div className="PlayerStatus">
-              <div className="PlayerStatusIn" >
+              <div className="PlayerStatusIn">
                 <div className="mini-map">
                   {Map.map((row, rowIndex) => (
                     <div key={rowIndex} className="mini-map-row">
@@ -269,7 +268,7 @@ const [revSec, setRevSec] = useState(0);
                           key={`${rowIndex}-${colIndex}`}
                           className="mini-hexagon"
                           style={{
-                            width:" 8px",
+                            width: " 8px",
                             height: "8px",
                             marginTop: hex.col % 2 === 0 ? "5px" : "1px",
                             backgroundColor:
@@ -287,11 +286,16 @@ const [revSec, setRevSec] = useState(0);
                   <button className={"pixel2"} onClick={PlanSubmit}>
                     RUN PLAN
                   </button>
-                  <button className={"pixel2"} onClick={PlanArea}>
+                  <button
+                    className={"pixel2"}
+                    onClick={() => {
+                      PlanArea();
+                      setClick(true);
+                    }}
+                  >
                     CHANGE PLAN
                   </button>
-                
-                  
+
                   {allInitial
                     ? "Game Start!!!"
                     : "waiting other player plan initial plan"}
@@ -321,10 +325,9 @@ const [revSec, setRevSec] = useState(0);
                     TOTOL REGION : {Me && Me.totolRegion}{" "}
                   </div>
                 </div>
-
-              </div>
               </div>
             </div>
+          </div>
         </div>
       </div>
       <div className="GameplayBackground-bottom"></div>

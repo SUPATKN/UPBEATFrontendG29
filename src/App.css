@@ -30,12 +30,15 @@
   width: 100%;
   height: 0 px;
 }
-.Warning{
+.Warning {
   font-size: 14px;
   text-align: center;
   color: red;
-  text-shadow: 0 0px 2px   #000000, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff;
-  
+  text-shadow:
+    0 0px 2px #000000,
+    1px -1px 0 #ffffff,
+    -1px 1px 0 #ffffff,
+    1px 1px 0 #ffffff;
 }
 .Gameplay-Main {
   display: flex;
@@ -78,11 +81,11 @@
   z-index: 1;
 }
 
-.GameplayBackground-top-name{
+.GameplayBackground-top-name {
   /* border: 1px solid red; */
 }
 
-.GameplayBackground-top-turn{
+.GameplayBackground-top-turn {
   width: 910px;
   display: flex;
   justify-content: space-between;
@@ -109,6 +112,54 @@
   box-shadow: outset 0 0 20px 11px rgba(0, 0, 0, 0.5);
 }
 
+.TuBackground {
+  width: 100vw; /* Full width of the viewport */
+  height: 100vh; /* Full height of the viewport */
+  background-image: url(/src/Image/2sre110i6u8c1.gif);
+  background-size: cover; /* ขยายพื้นหลังเต็มพื้นที่ของ viewport */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed; /* ติดตามหน้าจอ */
+  position: fixed;
+  bottom: 0;
+  justify-content: center;
+  display: flex;
+}
+.TutorialBoard {
+  z-index: 1;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  margin-top: 2%;
+  margin-left: 18%;
+  background-image: url(/src/Image/book.png);
+  background-size: 1000px;
+  background-repeat: no-repeat;
+}
+.BoarderTL {
+  justify-content: center;
+  float: left;
+  width: 32%;
+  padding-left: 60px;
+  padding-top: 50px;
+  height: 100%;
+
+  font-family: asd;
+  font-size: 20px;
+}
+.BoarderTR {
+  justify-content: center;
+  float: right;
+  width: 35%;
+  padding-left: 80px;
+  padding-right: 10px;
+  padding-top: 80px;
+  height: 100%;
+
+  font-family: asd;
+  font-size: 20px;
+}
+
 .PlayerName {
   margin-top: 390px; /* การกำหนดระยะห่างด้านบน */
   z-index: 1;
@@ -116,7 +167,11 @@
   font-size: 27px;
   color: white;
   position: absolute;
-  text-shadow: 0 0px 14px #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  text-shadow:
+    0 0px 14px #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
   overflow-wrap: break-word; /* ให้ wrap เมื่อคำเกินความยาว */
   word-wrap: break-word; /* ให้ wrap เมื่อคำเกินความยาว */
   white-space: normal; /* ให้เว้นช่องว่างของบรรทัด */
@@ -270,7 +325,11 @@
   margin-left: 1%;
   margin-top: 250px;
   z-index: 1;
-  text-shadow: 0 0px 14px #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  text-shadow:
+    0 0px 14px #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 .UnreadyStatus {
   font-family: "Public Pixel", sans-serif;
@@ -280,7 +339,11 @@
   margin-left: 1%;
   margin-top: 250px;
   z-index: 1;
-  text-shadow: 0 0px 14px #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  text-shadow:
+    0 0px 14px #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 .Unready {
@@ -363,9 +426,12 @@
   justify-content: center;
   background-image: url(/src/Image/forest_of_pixels_by_bunnsp_ddxkac6-pre.jpg);
   color: aliceblue;
-  text-shadow: 0 0px 14px #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  text-shadow:
+    0 0px 14px #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
   background-size: cover;
-
 }
 .Hidden {
   display: none;
@@ -409,7 +475,7 @@
   margin-top: 30px;
   margin-left: 110px;
 }
-.submitBot-Gameplay{
+.submitBot-Gameplay {
   display: block;
 }
 .submitBotPlan {
@@ -474,7 +540,8 @@
   padding: 10px 20px;
 
   background: #000000;
-  background: linear-gradient(135deg, transparent 10px, #000000 0) top left,
+  background:
+    linear-gradient(135deg, transparent 10px, #000000 0) top left,
     linear-gradient(225deg, transparent 10px, #000000 0) top right,
     linear-gradient(315deg, transparent 10px, #000000 0) bottom right,
     linear-gradient(45deg, transparent 10px, #000000 0) bottom left;
@@ -600,7 +667,8 @@
   padding: 10px 20px;
 
   background: #000000;
-  background: linear-gradient(135deg, transparent 10px, #000000 0) top left,
+  background:
+    linear-gradient(135deg, transparent 10px, #000000 0) top left,
     linear-gradient(225deg, transparent 10px, #000000 0) top right,
     linear-gradient(315deg, transparent 10px, #000000 0) bottom right,
     linear-gradient(45deg, transparent 10px, #000000 0) bottom left;
@@ -666,7 +734,11 @@
   margin-bottom: 20px;
   font-family: "Public Pixel", sans-serif;
   color: #ffffff;
-  text-shadow: 0 0px 14px #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  text-shadow:
+    0 0px 14px #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 .UpbeatTitleDis {
@@ -675,7 +747,11 @@
   margin-left: 180px;
   font-family: "Public Pixel", sans-serif;
   color: #ffffff;
-  text-shadow: 0 0px 14px #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  text-shadow:
+    0 0px 14px #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 .PlayerStatus {
@@ -706,16 +782,16 @@
   height: 150px;
 }
 
-.Plan{ 
+.Plan {
   justify-content: center;
   align-items: center;
   display: flex;
   z-index: 999;
-  position:absolute;
+  position: absolute;
   background-color: #838383;
 }
 
-.PlanBoard{
+.PlanBoard {
   z-index: 1;
   justify-content: center;
   align-items: center;
@@ -726,14 +802,14 @@
   border-radius: 2px;
 }
 
-.PlanArea{
+.PlanArea {
   align-items: center;
   justify-content: center;
   display: flex;
   flex-direction: column;
 }
 
-.TextArea{
+.TextArea {
   width: 350px;
   height: 350px;
   border: 6px solid #434343;

@@ -130,7 +130,7 @@ const Lobby = () => {
           />
         </div>
       ) : (
-        <div className="ReadyButton"  style={{ marginTop: "80px" }}>
+        <div className="ReadyButton" style={{ marginTop: "80px" }}>
           <Button
             Title={Me && Me.ready ? "Unready" : "Ready"}
             handleClick={() => handlePlayerReady(name["playername"])}
