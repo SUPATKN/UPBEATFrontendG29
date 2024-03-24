@@ -44,6 +44,10 @@
   position: fixed;
   height: 90%;
   justify-content: space-between;
+  background-image: url(/src/Image/forest-8227410.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  
 }
 .GameplayBackground-left {
   justify-content: center;
@@ -122,6 +126,10 @@
   white-space: normal; /* ให้เว้นช่องว่างของบรรทัด */
   word-break: break-all; /* แบ่งคำออกเมื่อคำเกินความยาว */
 }
+.frame-map{
+  width: 700px;
+  height: 700px;
+}
 
 .hexagon-col {
   margin-left: -2.4%;
@@ -138,12 +146,7 @@
 
 .hexagon-row {
   display: flex;
-  /* margin-top: -13.5%; */
 }
-  .hexagon-row {
-    display: flex;
-    /* margin-top: -13.5%; */
-  }
 
 
   .hexagon1 {
@@ -214,10 +217,12 @@
   }
   
   .hexagon-map-container{
-    height: 400px;
-    width: 700px;
-    background-image: url(/src/Image/BlGVAfgCEAAOv7V.png);
-    background-size: cover;
+    border: 15px solid transparent;
+    border-image: url(/src/Image/3eb349e2eeecd92398b69ba585f6470a.jpg) 40 repeat;
+    height: 450px;
+    width: 900px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* เพิ่มเงาของขอบ */
+
   }
   .frame-bg {
     position: relative;

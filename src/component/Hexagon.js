@@ -18,6 +18,8 @@
   import City3 from "../Image/city3.png"
   import bg  from "../Image/BlGVAfgCEAAOv7V.png";
   import "./Hexagon.css";
+  import HexRed from "../Image/hexRed.png"
+  import Crew from "../Image/pngtree-viking-cartoon-character-sprite-sheet-animation-for-2d-rpg-game-png-image_6328460.png"
 
 const Hexagon = ({ map, allPlayer, Me }) => {
   const [zoomed, setZoomed] = useState(false);
@@ -57,20 +59,18 @@ const Hexagon = ({ map, allPlayer, Me }) => {
     };
 
   return (
-    <div
+    <div className="hexagon-map-container"
       style={{
         width: "900px",
         height: "450px",
         // marginRight: "100px",
         // marginTop: "50px",
-        border: "2px solid black",
         overflow: "hidden",
-        background: "#ffffff",
       }}
     >
       <div
         ref={containerRef}
-        style={{ overflow: "hidden", background: "#ffffff" }}
+        style={{ overflow: "hidden",}}
         onWheel={(e) => {
           if (e.deltaY > 0 && hexSize > 50) {
             setHexSize(hexSize - 5);
@@ -87,7 +87,6 @@ const Hexagon = ({ map, allPlayer, Me }) => {
         onMouseDown={handleMouseDown}
         onMouseUp={handleMouseUp}
         onMouseMove={handleMouseMove}
-        className="hexagon-map-container"
       >
         <div
           className="main-map"
