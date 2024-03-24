@@ -51,7 +51,7 @@ const Hexagon = ({ map, allPlayer }) => {
   };
 
   return (
-    <div style={{width: "900px", height: "400px",marginRight:"100px",marginTop:"50px", border: "2px solid black", overflow: "hidden", background: "#ffffff" }}>
+    <div style={{width: "900px", height: "450px",marginRight:"100px",marginTop:"50px", border: "2px solid black", overflow: "hidden", background: "#ffffff" }}>
 
     <div
       ref={containerRef}
@@ -205,24 +205,6 @@ const Hexagon = ({ map, allPlayer }) => {
                 </div>
               );
             })}
-          </div>
-        ))}
-      </div>
-      <div className="mini-map">
-        {map.map((row, rowIndex) => (
-          <div key={rowIndex} className="mini-map-row">
-            {row.map((hex, colIndex) => (
-              <div
-                key={`${rowIndex}-${colIndex}`}
-                className="mini-hexagon"
-                style={{
-                  width: "10px",
-                  height: "6px",
-                  marginTop: hex.col % 2 === 0 ? "5px" : "1px",
-                  backgroundColor: hex.cityCenter ? "red" : "transparent",
-                }}
-              ></div>
-            ))}
           </div>
         ))}
       </div>

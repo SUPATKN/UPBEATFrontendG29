@@ -25,40 +25,66 @@
     left: 0;
     opacity: 90%;
   }
-  .GameplayBackground {
-    width: 100vw; /* Full width of the viewport */
-    height: 100vh; /* Full height of the viewport */
+
+  .Gameplay{
+    width: 100%;
+    height: inherit;
+  }
+
+  .Gameplay-Main{
+    display: flex;
+    width: 100%;
+    position: absolute;
+    position: fixed;
+    height: 100%;
+    justify-content: space-between;
+  }
+  .GameplayBackground-left{
+    float: left;
+    width: 73%;
+    height: 100% ;
+    border: 1px solid red;
+  }
+
+  .GameplayBackground-right {
+    background-image: url(/src/Image/3eb349e2eeecd92398b69ba585f6470a.jpg);
+    background-size: 20px;
+    width: 27%;
+    height: 100%;
+    border: 1px solid rgb(247, 255, 0);
+  }
+
+  .GameplayBackground-top{
+    width: 100%; /* Full width of the viewport */
+    height: 8vh; /* Full height of the viewport */
     background-image: url(/src/Image/3eb349e2eeecd92398b69ba585f6470a.jpg);
     background-size: 20px; /* ขยายพื้นหลังเต็มพื้นที่ของ viewport */
     background-repeat: repeat;
     background-position: center;
     background-attachment: fixed; /* ติดตามหน้าจอ */
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-  .GameplayBorder {
-    display: flex;
+    justify-content: space-between;
+    align-items: center;
     position: fixed;
-    justify-content: flex-end;
+    display: flex;
     top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 10px solid rgba(212, 212, 212, 0);
-    box-sizing: border-box; /* จัดการให้ขนาดความกว้างและความสูงของขอบนับรวมขอบด้วย */
-    box-shadow: inset 0 0 20px 11px rgba(0, 0, 0, 0.5);
-    background-clip: padding-box;
-    background-image: url(/src/Image/125906483-pixel-art-background-vector-illustration-abstract-square-pixel-pattern-mosaic-background.jpg);
-    background-size: 200px;
+    border: 1px solid red;
+    z-index: 1;
+  }
+  .GameplayBackground-bottom{
+    width: 100vw; /* Full width of the viewport */
+    height: 10vh; /* Full height of the viewport */
+    background-image: url(/src/Image/3eb349e2eeecd92398b69ba585f6470a.jpg);
+    background-size: 20px; /* ขยายพื้นหลังเต็มพื้นที่ของ viewport */
     background-repeat: repeat;
     background-position: center;
-    background-attachment: fixed;
+    background-attachment: fixed; /* ติดตามหน้าจอ */
+    position: fixed;
+    bottom: 0;
+    border: 1px solid red;
   }
 
   .PlayerInfo {
-    background-image: url(/src/Image/3eb349e2eeecd92398b69ba585f6470a.jpg);
-    background-size: 20px;
+   
     width: 400px;
     height: 100vh;
     /* border: #000000 solid; */
@@ -354,9 +380,20 @@
     width: 50%;
     height: 10%;
   }
+  .inputCusPlan {
+    display: block;
+    border: 6px solid #434343;
+    padding: 5px;
+    width: 50%;
+    height: 50%;
+  }
   .submitBot {
     margin-top: 30px;
     margin-left: 110px;
+  }
+  .submitBotPlan{
+    
+    display: block;
   }
 
   .pixel,
@@ -620,11 +657,34 @@
     color: #ffffff;
     text-shadow: 0 0px 14px #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   }
+
   .PlayerStatus{
-    padding: 20px;
+    position: absolute;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    padding-top: 50px;
+    top: 0;
+    right: 0;
+    color: #ffffff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   }
   
   .PlayerStatusIn{
-    padding: 10px ;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px 10px 20px ;
+    position: relative;
+    color: #ffffff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   }
+
+  .PlayerStatusIn textarea {
+    width: 300px;
+    color: #ffffff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    height: 150px;
+  }
+  
   

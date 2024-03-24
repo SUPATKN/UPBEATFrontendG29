@@ -114,49 +114,76 @@ const Gameplay = () => {
   
 
   return (
-    <div className="GameplayBackground">
-      <div className="GameplayBorder">
-        {/* {console.log(allPlayers[0].crew.position)} */}
-        <Hexagon map={Map} allPlayer={allPlayers} />
-        <div className="PlayerInfo">
+    <div className="Gameplay">
 
-          <div className="PlayerStatus">
-            <div className="font PlayerStatusIn" id="player_name">
-              PLAYER NAME : <span id="playername">{Me && Me.name}</span>
-            </div>
-            
-            <div class="font PlayerStatusIn">
-              COUNTDOWN TIME: <span id="timer"></span>
-            </div>
-          </div>
+      /*----------- TOP SECTION -----------*/
+      <div className="GameplayBackground-top">
 
-          <br></br>
-          <textarea
-            className={" inputCus"}
-            type="text"
-            value={Plan}
-            onChange={(e) => setPlan(e.target.value)}
-          />
-          <div className="submitBot">
-            <button className={"pixel2 "} onClick={handleSubmit}>
-              Submit
-            </button>
-          </div>
-
-          <div className="PlayerStatus">
-              <div id="budget">
-                <div className="font PlayerStatusIn" id="budget-value"> BUDGET : {Me && Me.budget}</div>
-              </div>
-
-              <div id="citycenter">
-                <div className="font PlayerStatusIn" id="citycenter"> CITY CENTER : {Me && Me.cityCenter.row+1} , {Me && Me.cityCenter.col+1} </div>
-              </div>
-
-              <div id="totolRegion">
-                <div className="font PlayerStatusIn" id="xp-value">TOTOL REGION : {Me && Me.totolRegion} </div>
-              </div>
-          </div>
+        <div className="font PlayerStatusIn" id="player_name">
+          PLAYER NAME : <span id="playername">{Me && Me.name}</span>
         </div>
+        
+        <div class="font PlayerStatusIn">
+          COUNTDOWN TIME: <span id="timer"></span>
+        </div>
+
+      </div>
+
+      /*----------- MAIN SECTION -----------*/
+      <div className="Gameplay-Main">
+
+        <div className="GameplayBackground-left">
+          <Hexagon map={Map} allPlayer={allPlayers} />
+        </div>
+
+        <div className="GameplayBackground-right">
+            <div className="PlayerInfo PlayerStatus">
+
+              <div className="PlayerStatusIn">
+                <div className="mini-map">
+                  {Map.map((row, rowIndex) => (
+                    <div key={rowIndex} className="mini-map-row">
+                      {row.map((hex, colIndex) => (
+                        <div
+                          key={`${rowIndex}-${colIndex}`}
+                          className="mini-hexagon"
+                          style={{
+                            width: "11px",
+                            height: "6px",
+                            marginTop: hex.col % 2 === 0 ? "5px" : "1px",
+                            backgroundColor: hex.whoBelongName === MyName
+                            ? "red" : "transparent",
+                          }}
+                        ></div>
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                  <div id="budget">
+                    <div className="font PlayerStatusIn" id="budget-value"> BUDGET : {Me && Me.budget}</div>
+                  </div>
+
+                  <div id="citycenter">
+                    <div className="font PlayerStatusIn" id="citycenter"> CITY CENTER : {Me && Me.cityCenter.row+1} , {Me && Me.cityCenter.col+1} </div>
+                  </div>
+
+                  <div id="totolRegion">
+                    <div className="font PlayerStatusIn" id="xp-value">TOTOL REGION : {Me && Me.totolRegion} </div>
+                  </div>
+
+              </div>
+            </div>
+
+        </div>
+      </div>
+      
+
+
+      <div className="GameplayBackground-bottom">
+
       </div>
     </div>
   );
