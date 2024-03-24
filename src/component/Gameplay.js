@@ -249,6 +249,7 @@ const [revSec, setRevSec] = useState(0);
                 intMin={intMin}
                 intSec={intSec}
                 initial={allInitial}
+                click={PlanArea}
               />
             )}
           </div>

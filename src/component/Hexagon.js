@@ -18,6 +18,8 @@
   import City3 from "../Image/city3.png"
   import bg  from "../Image/BlGVAfgCEAAOv7V.png";
   import "./Hexagon.css";
+  import HexRed from "../Image/hexRed.png"
+  import Crew from "../Image/pngtree-viking-cartoon-character-sprite-sheet-animation-for-2d-rpg-game-png-image_6328460.png"
 
 const Hexagon = ({ map, allPlayer, Me }) => {
   const [zoomed, setZoomed] = useState(false);
@@ -61,8 +63,7 @@ const Hexagon = ({ map, allPlayer, Me }) => {
       style={{
         width: "765px",
         height: "500px",
-        // marginRight: "100px",
-        // marginTop: "50px",
+        marginTop: "14px",
         border: "6px solid  #434343",
         overflow: "hidden"
       }}

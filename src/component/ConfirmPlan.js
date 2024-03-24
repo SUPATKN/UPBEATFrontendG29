@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import CountdownTimer from "./CountdownTimer";
-const ConfirmPlan = ({ Plan, setPlan, handleSubmit,intMin,intSec,initial}) => {
+const ConfirmPlan = ({ Plan, setPlan, handleSubmit,intMin,intSec,initial,click}) => {
   
 
   return (
@@ -19,6 +19,7 @@ const ConfirmPlan = ({ Plan, setPlan, handleSubmit,intMin,intSec,initial}) => {
       />
       <button className={"pixel2"} onClick={()=>{
         handleSubmit()
+        click()
       }}>
         Submit
       </button>

@@ -51,7 +51,7 @@
   background-size: 180px;
   justify-content: center;
   display: flex;
-  padding-top:35px ;
+  padding-top:12px ;
   float: left;
   width: 73%;
   height: 100%;
@@ -205,8 +205,8 @@
   background-repeat: no-repeat;
 }
 .hexagon-map-container {
-  height: 400px;
-    width: 700px;
+  height: 100%;
+    width: 100%;
     background-image: url(/src/Image/BlGVAfgCEAAOv7V.png);
     background-size: cover;
 }
@@ -753,7 +753,7 @@
   align-items: center;
   display: flex;
   width: 500px;
-  height: 500px;
+  height: 530px;
   border: 6px solid #434343;
   border-radius: 2px;
 }
