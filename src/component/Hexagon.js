@@ -30,7 +30,6 @@ const Hexagon = ({ map, allPlayer, Me }) => {
   const [startY, setStartY] = useState(0);
   const containerRef = useRef(null);
 
-  console.log(hexSize, mgL, mgB, mgt, Imgt);
 
   const handleMouseDown = (e) => {
     setIsDragging(true);
@@ -294,7 +293,7 @@ const Hexagon = ({ map, allPlayer, Me }) => {
                             height: `${hexSize * 1.2}%`,
                             marginTop: `${hexSize * 0.1}%`,
                             marginLeft: `${hexSize * 0.01}%`,
-                            opacity: `${40}%`,
+                            opacity: `${75}%`,
                           }}
                           alt="City Center"
                         />
@@ -331,24 +330,6 @@ const Hexagon = ({ map, allPlayer, Me }) => {
                   </div>
                 );
               })}
-            </div>
-          ))}
-        </div>
-        <div className="mini-map">
-          {map.map((row, rowIndex) => (
-            <div key={rowIndex} className="mini-map-row">
-              {row.map((hex, colIndex) => (
-                <div
-                  key={`${rowIndex}-${colIndex}`}
-                  className="mini-hexagon"
-                  style={{
-                    width: "10px",
-                    height: "6px",
-                    marginTop: hex.col % 2 === 0 ? "5px" : "1px",
-                    backgroundColor: hex.cityCenter ? "red" : "transparent",
-                  }}
-                ></div>
-              ))}
             </div>
           ))}
         </div>

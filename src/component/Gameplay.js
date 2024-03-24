@@ -21,6 +21,7 @@ const Gameplay = () => {
   const [Me, setMe] = useState(null);
   const name = useParams();
   const MyName = name["name"];
+
   console.log(name["name"]);
 
   const PlanSubmit = () => {
@@ -94,6 +95,14 @@ const Gameplay = () => {
     }
   };
 
+
+  const AlertLose = () => {
+      alert("Some Player Lose") 
+      fetchAllPlayers()
+      fetchGameState()
+  }
+
+
   useEffect(() => {
     const socket = new SockJS("http://localhost:8080/ws");
     const client = Stomp.over(socket);
@@ -103,6 +112,7 @@ const Gameplay = () => {
       client.subscribe("/topic/updateMap", () => fetchAllPlayers());
       client.subscribe("/topic/initial", () => CheckAllInitial());
       client.subscribe("/topic/nextPlayerTurn", () => fetchGameState());
+      client.subscribe("/topic/playerLose", () => AlertLose());
     });
     fetchAllPlayers();
     fetchMap();
@@ -134,6 +144,9 @@ const Gameplay = () => {
       setGamestate(response.data);
       let turn = response.data.turn.name;
       setWhoTurn(turn);
+      StartCountInitial()
+  StartCountRev()
+
     } catch (error) {
       console.error("Error fetching players:", error);
     }
@@ -179,7 +192,7 @@ const Gameplay = () => {
     console.log(Map);
   }, []);
 
-  function countdown(seconds) {
+  function InitialPlanCount(seconds) {
     const startTime = Date.now();
     const endTime = startTime + seconds * 1000; // Convert seconds to milliseconds
 
@@ -210,8 +223,55 @@ const Gameplay = () => {
     const interval = setInterval(updateTimer, 1000); // Update every second
   }
 
-  // Example usage: Start a 15-second countdown
-  countdown(300);
+  function RevistionPlanCount(seconds) {
+    const startTime = Date.now();
+    const endTime = startTime + seconds * 1000; // Convert seconds to milliseconds
+
+    function updateTimer() {
+      const remainingTime = endTime - Date.now();
+
+      if (remainingTime <= 0) {
+        // Time's up!
+        clearInterval(interval);
+        console.log("Countdown finished!");
+        return;
+      }
+
+      const minutes = Math.floor(remainingTime / 60000);
+      const seconds = Math.floor((remainingTime % 60000) / 1000);
+
+      // Ensure the timer element exists before updating its content
+      const timerElement = document.getElementById("timer2");
+      if (timerElement) {
+        timerElement.textContent = `${minutes}:${seconds
+          .toString()
+          .padStart(2, "0")}`;
+      } else {
+        console.error("Timer element with ID 'timer' not found!");
+      }
+    }
+
+    const interval = setInterval(updateTimer, 1000); // Update every second
+  }
+  const StartCountInitial = () =>{
+    if(GameState){
+      let init_plan_min = GameState.init_plan_min;
+  let init_plan_sec = GameState.init_plan_sec;
+      init_plan_min = init_plan_min*60
+    InitialPlanCount(init_plan_min+init_plan_sec)
+    }
+    
+  }
+
+  const StartCountRev = () =>{
+    if(GameState){
+    let plan_rev_min = GameState.plan_rev_min;
+  let plan_rev_sec = GameState.plan_rev_sec;
+  plan_rev_min = plan_rev_min*60
+    RevistionPlanCount(plan_rev_min+plan_rev_sec)
+    }
+  }
+
 
   return (
     <div className="Gameplay">
@@ -220,9 +280,12 @@ const Gameplay = () => {
         <div className="font PlayerStatusIn" id="player_name">
           PLAYER NAME : <span id="playername">{Me && Me.name}</span>
         </div>
-
+    
         <div class="font PlayerStatusIn">
-          COUNTDOWN TIME: <span id="timer"></span>
+          initial TIME: <span id="timer"></span>
+        </div>
+        <div class="font PlayerStatusIn">
+          RevPlan TIME: <span id="timer2"></span>
         </div>
       </div>
       /*----------- MAIN SECTION -----------*/

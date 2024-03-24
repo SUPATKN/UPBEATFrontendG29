@@ -30,7 +30,13 @@
   width: 100%;
   height: inherit;
 }
-
+.Warning{
+  font-size: 14px;
+  text-align: center;
+  color: red;
+  text-shadow: 0 0px 2px   #000000, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff;
+  
+}
 .Gameplay-Main {
   display: flex;
   width: 100%;
@@ -342,9 +348,11 @@
   height: 300px;
   display: flex;
   justify-content: center;
-  background-image: url(/src/Image/baeddaa8a28ed4a71df79662ffbb15f6.gif);
+  background-image: url(/src/Image/forest_of_pixels_by_bunnsp_ddxkac6-pre.jpg);
   color: aliceblue;
   text-shadow: 0 0px 14px #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  background-size: cover;
+
 }
 .Hidden {
   display: none;
