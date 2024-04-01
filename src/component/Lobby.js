@@ -18,7 +18,7 @@ const Lobby = () => {
 
   const fetchAllPlayers = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/allPlayer", {
+      const response = await axios.get("http://10.126.224.91:8080/allPlayer", {
         headers: {
           "Access-Control-Allow-Origin": "*", // กำหนดค่า Access-Control-Allow-Origin
         },
@@ -37,7 +37,7 @@ const Lobby = () => {
   };
 
   useEffect(() => {
-    const socket = new SockJS("http://localhost:8080/ws");
+    const socket = new SockJS("http://10.126.224.91:8080/ws");
     const client = Stomp.over(socket);
 
     client.connect({}, () => {
@@ -50,7 +50,7 @@ const Lobby = () => {
   }, []);
 
   const CheckAllReady = async () => {
-    const response = await axios.get("http://localhost:8080/allReady", {
+    const response = await axios.get("http://10.126.224.91:8080/allReady", {
       headers: {
         "Access-Control-Allow-Origin": "*", // กำหนดค่า Access-Control-Allow-Origin
       },
@@ -64,7 +64,7 @@ const Lobby = () => {
     try {
       const player = allPlayers.find((player) => player.name === name);
       console.log(player.name);
-      await axios.put("http://localhost:8080/Ready", player.name, {
+      await axios.put("http://10.126.224.91:8080/Ready", player.name, {
         headers: { "Content-Type": "application/json" },
       });
     } catch (error) {
@@ -93,7 +93,7 @@ const Lobby = () => {
   const startGame = async () => {
     if (allPlayersReady && isHost) {
       try {
-        await axios.post("http://localhost:8080/gamestart", name, {
+        await axios.post("http://10.126.224.91:8080/gamestart", name, {
           headers: { "Content-Type": "application/json" },
         });
       } catch (error) {

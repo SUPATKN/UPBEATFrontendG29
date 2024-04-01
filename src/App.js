@@ -4,6 +4,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Lobby from "./component/Lobby";
 import Gameplay from "./component/Gameplay";
 import Tutorial from "./component/Tutorial";
+import axios from "axios";
+
+axios.defaults.baseURL = "";
 
 const App = () => {
   return (

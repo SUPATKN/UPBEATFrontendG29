@@ -12,9 +12,13 @@ const Box = () => {
 
   const CheckName = async (Name) => {
     console.log(name);
-    const response = await axios.post(`http://localhost:8080/checkName`, Name, {
-      headers: { "Content-Type": "application/json" },
-    });
+    const response = await axios.post(
+      `http://10.126.224.91:8080/checkName`,
+      Name,
+      {
+        headers: { "Content-Type": "application/json" },
+      }
+    );
     console.log(response.data);
     setNameCheck(!response.data);
     console.log(nameCheck);
@@ -26,7 +30,7 @@ const Box = () => {
       try {
         console.log(name);
         const response = await axios.post(
-          "http://localhost:8080/addplayer",
+          "http://10.126.224.91:8080/addplayer",
           name,
           {
             headers: { "Content-Type": "application/json" },

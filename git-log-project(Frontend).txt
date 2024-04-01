@@ -1,0 +1,275 @@
+*   commit cd0e8f6915e84c2fafffa4b0a93ca79a23c59acc
+|\  Merge: d04ca22 33ae4d5
+| | Author: SUPATKN <yacht1400@gmail.com>
+| | Date:   Mon Mar 25 05:24:57 2024 +0700
+| | 
+| |     Merge branch 'main' of https://github.com/SUPATKN/UPBEATFrontendG29
+| |   
+| *   commit 33ae4d51e5a2403a69cde4fe3ad95e5751e30e56
+| |\  Merge: 6154853 5e28582
+| | | Author: touch <tttouch1122@gmail.com>
+| | | Date:   Mon Mar 25 05:11:39 2024 +0700
+| | | 
+| | |     Merge branch 'main' of https://github.com/SUPATKN/UPBEATFrontendG29
+| | | 
+| | * commit 5e28582dc545ae8114887b11161f01e33e77b8ee
+| | | Author: TIT4nnnx <ekarach6627@gmail.com>
+| | | Date:   Mon Mar 25 05:04:43 2024 +0700
+| | | 
+| | |     fix size
+| | |   
+| | *   commit 8f4b1c3ac20d72e1f5d6984e0fbfc2bf61e1b2b5
+| | |\  Merge: 1681b69 8197633
+| | | | Author: TIT4nnnx <ekarach6627@gmail.com>
+| | | | Date:   Mon Mar 25 04:45:41 2024 +0700
+| | | | 
+| | | |     Merge branch 'main' of https://github.com/SUPATKN/UPBEATFrontendG29
+| | | | 
+| | * | commit 1681b69ed0f346e1aa5e0da08e701fe4f7b3649d
+| | | | Author: TIT4nnnx <ekarach6627@gmail.com>
+| | | | Date:   Mon Mar 25 04:43:32 2024 +0700
+| | | | 
+| | | |     FRONTEND SUCCESS
+| | | | 
+| * | | commit 61548536fc64505cb25c7664571529fb716aa5c1
+| | |/  Author: touch <tttouch1122@gmail.com>
+| |/|   Date:   Mon Mar 25 05:10:21 2024 +0700
+| | |   
+| | |       border-frame
+| | |   
+| * |   commit 81976331c601d8b36989513525e4068a1459ffec
+| |\ \  Merge: 4da16aa b6387e1
+| | | | Author: touch <tttouch1122@gmail.com>
+| | | | Date:   Mon Mar 25 02:43:47 2024 +0700
+| | | | 
+| | | |     Merge branch 'main' of https://github.com/SUPATKN/UPBEATFrontendG29
+| | | | 
+| * | | commit 4da16aab654353bcac5bdc14d561b244ce88e644
+| | | | Author: touch <tttouch1122@gmail.com>
+| | | | Date:   Mon Mar 25 02:35:14 2024 +0700
+| | | | 
+| | | |     finishMap
+| | | | 
+* | | | commit d04ca22de4681f61ed08a6f641e3a5b66e92aea0
+| |/ /  Author: SUPATKN <yacht1400@gmail.com>
+|/| |   Date:   Mon Mar 25 05:21:07 2024 +0700
+| | |   
+| | |       update tutorial
+| | | 
+* | | commit b6387e1dfc91d0931e655a7b59db3c5aaa5c6b54
+| | | Author: SUPATKN <yacht1400@gmail.com>
+| | | Date:   Mon Mar 25 01:25:05 2024 +0700
+| | | 
+| | |     timer edit
+| | | 
+* | | commit 13b824e1515d613fe1ddb4b89f5f840d002ad26b
+| | | Author: SUPATKN <yacht1400@gmail.com>
+| | | Date:   Sun Mar 24 23:05:29 2024 +0700
+| | | 
+| | |     delete mini map
+| | |   
+* | |   commit c08f3badd97b80146c7b0137be8ea8c6080244bc
+|\ \ \  Merge: 92a9b11 fe06195
+| | |/  Author: SUPATKN <yacht1400@gmail.com>
+| |/|   Date:   Sun Mar 24 23:04:07 2024 +0700
+| | |   
+| | |       Merge branch 'main' of https://github.com/SUPATKN/UPBEATFrontendG29
+| | | 
+| * | commit fe061958905b36d95463f01ca0d0b5dd3759dc21
+| | | Author: TIT4nnnx <ekarach6627@gmail.com>
+| | | Date:   Sun Mar 24 23:01:17 2024 +0700
+| | | 
+| | |     Update PlanArea
+| | |     and Update webpage
+| | | 
+* | | commit 92a9b11b8c1d8b7a976751abb3ee358cfd4bb112
+|/ /  Author: SUPATKN <yacht1400@gmail.com>
+| |   Date:   Sun Mar 24 23:02:23 2024 +0700
+| |   
+| |       update timer and lose game
+| |   
+* |   commit edf53ca40825cf27514b4b8d58870770866931d0
+|\ \  Merge: b43d102 0632eaf
+| | | Author: SUPATKN <yacht1400@gmail.com>
+| | | Date:   Sun Mar 24 18:05:27 2024 +0700
+| | | 
+| | |     Merge branch 'main' of https://github.com/SUPATKN/UPBEATFrontendG29
+| | | 
+| * | commit 0632eafc8e757bc5e0c532ea6179f2d9e27bf668
+| |\| Merge: eb7f4f6 ce25bc3
+| | | Author: TIT4nnnx <ekarach6627@gmail.com>
+| | | Date:   Sun Mar 24 17:49:20 2024 +0700
+| | | 
+| | |     Merge branch 'main' of https://github.com/SUPATKN/UPBEATFrontendG29
+| | | 
+| * | commit eb7f4f67f9ccc5d557cf579aad11c193d7d42b0e
+| | | Author: TIT4nnnx <ekarach6627@gmail.com>
+| | | Date:   Sun Mar 24 17:48:02 2024 +0700
+| | | 
+| | |     edit css
+| | |   
+* | |   commit b43d1028534b054c9e660bff8e8e9e7f201ef735
+|\ \ \  Merge: 19256f7 ce25bc3
+| | |/  Author: SUPATKN <yacht1400@gmail.com>
+| |/|   Date:   Sun Mar 24 18:04:15 2024 +0700
+| | |   
+| | |       Merge branch 'main' of https://github.com/SUPATKN/UPBEATFrontendG29
+| | | 
+| * | commit ce25bc3b4d550950b7923c272b33fc99061f2ed5
+| |/  Author: touch <tttouch1122@gmail.com>
+| |   Date:   Sun Mar 24 01:32:35 2024 +0700
+| |   
+| |       image cell ,frame map
+| | 
+* | commit 19256f794762080351190df4e0eb68be833abdc7
+|\| Merge: 35ce36a 599f6e5
+| | Author: SUPATKN <yacht1400@gmail.com>
+| | Date:   Sun Mar 24 15:52:56 2024 +0700
+| | 
+| |     Merge branch 'main' of https://github.com/SUPATKN/UPBEATFrontendG29
+| | 
+| * commit 599f6e55eb6ebacc0fc292dfc268d5aafad8b90f
+| | Author: touch <tttouch1122@gmail.com>
+| | Date:   Sat Mar 23 15:59:02 2024 +0700
+| | 
+| |     chanhe img
+| |   
+| *   commit 8128dfe8e4ebbc6499ef2bfb59c9c61f6773e382
+| |\  Merge: d9103d9 8db0510
+| | | Author: touch <tttouch1122@gmail.com>
+| | | Date:   Sat Mar 23 15:58:45 2024 +0700
+| | | 
+| | |     Merge branch 'main' of https://github.com/SUPATKN/UPBEATFrontendG29
+| | | 
+| | * commit 8db0510068cf9a3ed0fb61be3bf6f930ed17fdeb
+| | | Author: TIT4nnnx <ekarach6627@gmail.com>
+| | | Date:   Fri Mar 22 20:44:06 2024 +0700
+| | | 
+| | |     Add PlayerStatus and countdown time on frontend
+| | | 
+| * | commit d9103d99ff3ce3b96eb112a2d23f37d31d5cd15a
+| |/  Author: touch <tttouch1122@gmail.com>
+| |   Date:   Sat Mar 23 15:53:55 2024 +0700
+| |   
+| |       map-4 zoom in zoom out
+| | 
+| * commit 95fbefda51a82cb7e66fdb925d67a720a726e060
+| | Author: touch <tttouch1122@gmail.com>
+| | Date:   Mon Mar 18 09:46:17 2024 +0700
+| | 
+| |     zoom-in zoom-out map and show minimap
+| | 
+* | commit 35ce36af3318ba29390ec87c07815ceed6f7e15f
+|/  Author: SUPATKN <yacht1400@gmail.com>
+|   Date:   Sun Mar 24 01:05:32 2024 +0700
+|   
+|       Huge update
+| 
+* commit 173d476b6078fc64a675d41ee67c553f9178a8cd
+| Author: SUPATKN <yacht1400@gmail.com>
+| Date:   Sun Mar 17 20:39:02 2024 +0700
+| 
+|     update plan and fetchMap
+|   
+*   commit a1fede72517785ff5a951b6719360f8278a164f1
+|\  Merge: 1fcfc58 79ec081
+| | Author: SUPATKN <yacht1400@gmail.com>
+| | Date:   Sat Mar 16 14:51:51 2024 +0700
+| | 
+| |     Merge branch 'main' of https://github.com/SUPATKN/UPBEATFrontendG29
+| | 
+| * commit 79ec0818f535f9d0e294a572ca2a93438c65defe
+| | Author: touch <tttouch1122@gmail.com>
+| | Date:   Sat Mar 16 14:39:55 2024 +0700
+| | 
+| |     gen map 15x15 zoom in zoom out
+| | 
+| * commit 091577ca3020d256ca043fd7bd84adf4f9c4c71b
+| | Author: touch <tttouch1122@gmail.com>
+| | Date:   Sat Mar 16 14:37:45 2024 +0700
+| | 
+| |     show mam 15x15 zoom in zoom out
+| | 
+* | commit 1fcfc5879a0cc44fc1306bc6eeb442c5a916052f
+|/  Author: SUPATKN <yacht1400@gmail.com>
+|   Date:   Sat Mar 16 14:47:32 2024 +0700
+|   
+|       edit Enter your name and background
+| 
+* commit 1b7bd41b86c16d9456c1f778cb2848d042414dc5
+| Author: SUPATKN <yacht1400@gmail.com>
+| Date:   Fri Mar 15 15:06:48 2024 +0700
+| 
+|     update show map and cityCenter
+| 
+* commit 00dc52cd54c1d3a0c3022bdd772a8acbadbbec1c
+| Author: SUPATKN <yacht1400@gmail.com>
+| Date:   Sat Mar 9 17:21:49 2024 +0700
+| 
+|     update go gameplay when host click start
+| 
+* commit e01bc12b42eec55f5d88d80e58c8fce5f9bee173
+| Author: SUPATKN <yacht1400@gmail.com>
+| Date:   Sat Mar 9 16:44:09 2024 +0700
+| 
+|     host startgame only
+| 
+* commit 0395a04c9995de84338c1e35764bd237135c06de
+| Author: SUPATKN <yacht1400@gmail.com>
+| Date:   Sat Mar 9 15:29:09 2024 +0700
+| 
+|     can sort me in lobby
+| 
+* commit 8ede32cc4d379a9c9be814613f64649a7ed6d49a
+| Author: SUPATKN <yacht1400@gmail.com>
+| Date:   Mon Mar 4 22:40:05 2024 +0700
+| 
+|     make websocket work correct and ready sync
+| 
+* commit 5761892c091d2059313ecaa4011f4c11cd8c0d74
+| Author: SUPATKN <yacht1400@gmail.com>
+| Date:   Sat Mar 2 02:21:58 2024 +0700
+| 
+|     update to join unlimit player
+| 
+* commit f9bd6e4afcb557d0bab045b0519072c32aa12552
+| Author: touch <tttouch1122@gmail.com>
+| Date:   Thu Feb 29 00:43:13 2024 +0700
+| 
+|     show name player 1,2
+| 
+* commit 92db588d19ba9d6b137bd3f03343091e0eb48163
+| Author: SUPATKN <yacht1400@gmail.com>
+| Date:   Wed Feb 28 21:28:19 2024 +0700
+| 
+|     can pull Player from backend
+| 
+* commit ad02a6fe16fe496f4c7a62b3ee5637e058bca01a
+| Author: SUPATKN <yacht1400@gmail.com>
+| Date:   Thu Feb 22 18:44:03 2024 +0700
+| 
+|     update lobby
+| 
+* commit 7870bd9965c2f25f9da5a0972ca2b7c1442107e6
+| Author: SUPATKN <yacht1400@gmail.com>
+| Date:   Fri Feb 16 22:58:44 2024 +0700
+| 
+|     add hexagon grid
+| 
+* commit 3708d698cd64fb9c634667f665e33740611aed00
+| Author: SUPATKN <yacht1400@gmail.com>
+| Date:   Fri Feb 16 22:24:33 2024 +0700
+| 
+|     make button to props
+| 
+* commit 21d4bef59b49c7d87c6463779bd46facb1cc8a0b
+| Author: SUPATKN <yacht1400@gmail.com>
+| Date:   Thu Feb 15 21:31:22 2024 +0700
+| 
+|     update button
+| 
+* commit 971a4ee2b49224f2be064765752238e395bcb7cf
+  Author: SUPATKN <yacht1400@gmail.com>
+  Date:   Thu Feb 15 20:02:41 2024 +0700
+  
+      init commit

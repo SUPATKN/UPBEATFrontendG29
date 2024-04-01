@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import SockJS from "sockjs-client";
@@ -22,11 +22,12 @@ const Gameplay = () => {
   const [intSec, setIntSec] = useState(0);
   const [revMin, setRevMin] = useState(0);
   const [revSec, setRevSec] = useState(0);
+  let losser = "";
   const name = useParams();
   const MyName = name["name"];
 
   console.log(name["name"]);
-
+  const navigate = useNavigate();
   const PlanSubmit = () => {
     if (allInitial) {
       if (whoTurn === MyName) {
@@ -51,13 +52,13 @@ const Gameplay = () => {
       try {
         console.log(Plan);
         await axios.put(
-          "http://localhost:8080/Plan",
+          "http://10.126.224.91:8080/Plan",
           { name: MyName, plan: Plan },
           {
             headers: { "Content-Type": "application/json" },
           }
         );
-        await axios.put("http://localhost:8080/InitialPlan", MyName, {
+        await axios.put("http://10.126.224.91:8080/InitialPlan", MyName, {
           headers: { "Content-Type": "application/json" },
         });
         setInitialPlan(true);
@@ -70,12 +71,14 @@ const Gameplay = () => {
         try {
           console.log(Plan);
           const response = await axios.put(
-            "http://localhost:8080/Plan",
+            "http://10.126.224.91:8080/Plan",
             { name: MyName, plan: Plan },
             {
               headers: { "Content-Type": "application/json" },
             }
           );
+          fetchAllPlayers();
+          fetchGameState();
         } catch (error) {
           console.error("Error adding player:", error);
         }
@@ -86,7 +89,7 @@ const Gameplay = () => {
 
   const fetchAllPlayers = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/allPlayer", {
+      const response = await axios.get("http://10.126.224.91:8080/allPlayer", {
         headers: {
           "Access-Control-Allow-Origin": "*", // กำหนดค่า Access-Control-Allow-Origin
         },
@@ -103,14 +106,8 @@ const Gameplay = () => {
     }
   };
 
-  const AlertLose = () => {
-    alert("Some Player Lose");
-    fetchAllPlayers();
-    fetchGameState();
-  };
-
   useEffect(() => {
-    const socket = new SockJS("http://localhost:8080/ws");
+    const socket = new SockJS("http://10.126.224.91:8080/ws");
     const client = Stomp.over(socket);
 
     client.connect({}, () => {
@@ -133,7 +130,7 @@ const Gameplay = () => {
 
   const fetchMap = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/getMap", {
+      const response = await axios.get("http://10.126.224.91:8080/getMap", {
         headers: {
           "Access-Control-Allow-Origin": "*", // กำหนดค่า Access-Control-Allow-Origin
         },
@@ -147,29 +144,33 @@ const Gameplay = () => {
 
   const fetchGameState = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/getGameState", {
-        headers: {
-          "Access-Control-Allow-Origin": "*", // กำหนดค่า Access-Control-Allow-Origin
-        },
-      });
+      const response = await axios.get(
+        "http://10.126.224.91:8080/getGameState",
+        {
+          headers: {
+            "Access-Control-Allow-Origin": "*", // กำหนดค่า Access-Control-Allow-Origin
+          },
+        }
+      );
       console.log(response.data);
       setGamestate(response.data);
 
       let turn = response.data.turn.name;
+      losser = response.data.turn.ploserName;
       setWhoTurn(turn);
-      let intMin = response.data.init_plan_min;
-      let intSec = response.data.init_plan_sec;
-      let RevMin = response.data.plan_rev_min;
-      let RevSec = response.data.plan_rev_sec;
-      setIntMin(GameState.init_plan_min);
-      setIntSec(GameState.init_plan_sec);
-      setRevMin(GameState.plan_rev_min);
-      setRevSec(GameState.plan_rev_sec);
+      // let intMin = response.data.init_plan_min;
+      // let intSec = response.data.init_plan_sec;
+      // let RevMin = response.data.plan_rev_min;
+      // let RevSec = response.data.plan_rev_sec;
+      // setIntMin(GameState.init_plan_min);
+      // setIntSec(GameState.init_plan_sec);
+      // setRevMin(GameState.plan_rev_min);
+      // setRevSec(GameState.plan_rev_sec);
 
-      setIntMin(response.data.init_plan_min);
-      setIntSec(response.data.init_plan_sec);
-      setRevMin(GameState.plan_rev_min);
-      setRevSec(GameState.plan_rev_sec);
+      // setIntMin(response.data.init_plan_min);
+      // setIntSec(response.data.init_plan_sec);
+      // setRevMin(GameState.plan_rev_min);
+      // setRevSec(GameState.plan_rev_sec);
     } catch (error) {
       console.error("Error fetching players:", error);
     }
@@ -186,11 +187,14 @@ const Gameplay = () => {
   }, [whoTurn]);
 
   const CheckAllInitial = async () => {
-    const response = await axios.get("http://localhost:8080/allInitialPlan", {
-      headers: {
-        "Access-Control-Allow-Origin": "*", // กำหนดค่า Access-Control-Allow-Origin
-      },
-    });
+    const response = await axios.get(
+      "http://10.126.224.91:8080/allInitialPlan",
+      {
+        headers: {
+          "Access-Control-Allow-Origin": "*", // กำหนดค่า Access-Control-Allow-Origin
+        },
+      }
+    );
     console.log(response.data);
     setAllInitial(response.data);
   };
@@ -198,7 +202,7 @@ const Gameplay = () => {
   const DoPlan = async () => {
     if ((whoTurn && whoTurn) === MyName) {
       const response = await axios.put(
-        "http://localhost:8080/ParsePlan",
+        "http://10.126.224.91:8080/ParsePlan",
         MyName,
         {
           headers: { "Content-Type": "application/json" },
@@ -208,7 +212,20 @@ const Gameplay = () => {
 
     console.log(MyName);
   };
+  const AlertLose = async () => {
+    await fetchAllPlayers();
+    await fetchGameState();
 
+    // สร้างการละเว้นเวลา 3 วินาที (3000 milliseconds) ก่อนที่จะดำเนินการต่อ
+    console.log("loser : ", losser);
+    console.log(MyName);
+
+    if (losser === MyName) {
+      alert("Nah, I'd lose");
+    } else {
+      alert("Nah, I'd Win");
+    }
+  };
   useEffect(() => {
     fetchMap();
     fetchGameState();
@@ -227,9 +244,17 @@ const Gameplay = () => {
         </div>
 
         <div className="font GameplayBackground-top-turn">
-       
-          <div className="PlayerStatusIn" > {GameState && <div> GAME TURN : {GameState.totalTurn}</div>}</div>
-          {whoTurn === MyName ? <div className="PlayerStatusIn MyTurn">MY TURN</div> : <div className="PlayerStatusIn OtherTurn">OTHER PLAYER TURN | TURN : {whoTurn} </div>}
+          <div className="PlayerStatusIn">
+            {" "}
+            {GameState && <div> GAME TURN : {GameState.totalTurn}</div>}
+          </div>
+          {whoTurn === MyName ? (
+            <div className="PlayerStatusIn MyTurn">MY TURN</div>
+          ) : (
+            <div className="PlayerStatusIn OtherTurn">
+              OTHER PLAYER TURN | TURN : {whoTurn}{" "}
+            </div>
+          )}
         </div>
       </div>
       /*----------- MAIN SECTION -----------*/
@@ -277,26 +302,27 @@ const Gameplay = () => {
                     </div>
                   ))}
                 </div>
-                
 
                 <div className="font Gamestate">
-                    {GameState && GameState.totalTurn < 2  && <div>
-                      {allInitial 
-                      ? "[ GAME START ]"
-                      : "PLANNING INITIAL PLAN ..."}
-                      </div>}
-                    <br />
-                    
-                    {allInitial && <div>
-                    {isAction ? "[ DOING ACTION ... ]" : ""}
-                    </div>}
-                  </div>
+                  {GameState && GameState.totalTurn < 2 && !isAction && (
+                    <div>
+                      {allInitial
+                        ? "[ GAME START ]"
+                        : "PLANNING INITIAL PLAN ..."}
+                    </div>
+                  )}
+                  <br />
+
+                  {allInitial && (
+                    <div>{isAction ? "[ DOING ACTION ... ]" : ""}</div>
+                  )}
+                </div>
 
                 <div className="submitBot-Gameplay PicSword">
                   <button className={"pixel2"} onClick={PlanSubmit}>
-                   RUN PLAN<image x></image>
+                    RUN PLAN<image x></image>
                   </button>
-                    
+
                   <button
                     className={"pixel2 "}
                     onClick={() => {
@@ -306,14 +332,15 @@ const Gameplay = () => {
                   >
                     CHANGE PLAN
                   </button>
-                
-                  
                 </div>
               </div>
 
               <div>
                 <div id="budget">
-                  <div className="font PlayerStatusIn PicCoin" id="budget-value">
+                  <div
+                    className="font PlayerStatusIn PicCoin"
+                    id="budget-value"
+                  >
                     {" "}
                     <image c></image> BUDGET : {Me && Me.budget}
                   </div>
@@ -322,14 +349,15 @@ const Gameplay = () => {
                 <div id="citycenter">
                   <div className="font PlayerStatusIn PicCity" id="citycenter">
                     {" "}
-                    <image c></image> CITY CENTER : {Me && Me.cityCenter.row + 1} ,{" "}
+                    <image c></image> CITY CENTER :{" "}
+                    {Me && Me.cityCenter.row + 1} ,{" "}
                     {Me && Me.cityCenter.col + 1}{" "}
                   </div>
                 </div>
 
                 <div id="totolRegion">
                   <div className="font PlayerStatusIn PicRegion" id="xp-value">
-                  <image c></image> TOTOL REGION : {Me && Me.totolRegion}{" "}
+                    <image c></image> TOTOL REGION : {Me && Me.totolRegion}{" "}
                   </div>
                 </div>
               </div>
@@ -337,20 +365,18 @@ const Gameplay = () => {
           </div>
         </div>
       </div>
-
       /*----------- FOOTER SECTION -----------*/
       <div className="GameplayBackground-bottom">
         <div className="font PlayerStatusOP">
-        {allPlayers
-          .filter(player => player.name !== MyName)
-          .map((player) => (
-            <span className="opponent-player">
-              <image u></image> OPPONENT: {player.name}
-              <br />
-            </span>
-          ))} 
+          {allPlayers
+            .filter((player) => player.name !== MyName)
+            .map((player) => (
+              <span className="opponent-player">
+                <image u></image> OPPONENT: {player.name}
+                <br />
+              </span>
+            ))}
         </div>
-
       </div>
     </div>
   );

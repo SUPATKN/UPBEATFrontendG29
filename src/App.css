@@ -51,14 +51,12 @@
   background-image: url(/src/Image/forest-8227410.jpg);
   background-size: contain;
   background-repeat: no-repeat;
-  
 }
 .GameplayBackground-left {
-  background-image: url(/src/Image/den-pixelart-watertiles.gif);
   background-size: 180px;
   justify-content: center;
   display: flex;
-  padding-top:12px ;
+  padding-top: 12px;
   float: left;
   width: 73%;
   height: 100%;
@@ -190,7 +188,7 @@
   white-space: normal; /* ให้เว้นช่องว่างของบรรทัด */
   word-break: break-all; /* แบ่งคำออกเมื่อคำเกินความยาว */
 }
-.frame-map{
+.frame-map {
   width: 700px;
   height: 700px;
 }
@@ -212,105 +210,93 @@
   display: flex;
 }
 
+.hexagon1 {
+  background-image: url(/src/Image/a.png);
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.hexagon1I0 {
+  background-image: url(/src/Image/ai0.png);
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.hexagon1I1 {
+  background-image: url(/src/Image/ai1.png);
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.hexagon2 {
+  background-image: url(/src/Image/b.png);
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
-  .hexagon1 {
+.hexagon3 {
+  background-image: url(/src/Image/c.png);
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.hexagon3I {
+  background-image: url(/src/Image/ci.png);
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.hexagon4 {
+  background-image: url(/src/Image/d.png);
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.hexagon4I {
+  background-image: url(/src/Image/di.png);
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
-    background-image: url(/src/Image/a.png);
-    background-size: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    
-  }
-  .hexagon1I0 {
+.hexagon-map-container {
+  height: 490px;
+  width: 900px;
+}
 
-    background-image: url(/src/Image/ai0.png);
-    background-size: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    
-    
-  }
-  .hexagon1I1 {
+.hexagon-map-container1 {
+  border: 15px solid transparent;
+  border-image: url(/src/Image/3eb349e2eeecd92398b69ba585f6470a.jpg) 40 repeat;
+  box-shadow: 0 20px 12px rgba(0, 0, 0, 0.5); /* เพิ่มเงาของขอบ */
+}
 
-    background-image: url(/src/Image/ai1.png);
-    background-size: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    
-    
-  }
-  .hexagon2 {
+.frame-bg {
+  position: relative;
+  display: inline-block;
+}
 
-    background-image: url(/src/Image/b.png);
-    background-size: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    
-  }  
- 
-  .hexagon3 {
+.main-map {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding-left: 50px;
+  z-index: 1;
+  background-image: none;
+}
 
-    background-image: url(/src/Image/c.png);
-    background-size: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    
-  }  
-  .hexagon3I {
-
-    background-image: url(/src/Image/ci.png);
-    background-size: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    
-  } 
-  .hexagon4 {
-
-    background-image: url(/src/Image/d.png);
-    background-size: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    
-  }
-  .hexagon4I {
-
-    background-image: url(/src/Image/di.png);
-    background-size: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  
-  .hexagon-map-container{
-    border: 15px solid transparent;
-    border-image: url(/src/Image/3eb349e2eeecd92398b69ba585f6470a.jpg) 40 repeat;
-    height: 450px;
-    width: 900px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* เพิ่มเงาของขอบ */
-
-  }
-  .frame-bg {
-    position: relative;
-    display: inline-block;
-  }
-
-  .main-map{
-    position: relative;
-    width: 200%;
-    height: 200%;
-  }
- 
-  .Select {
-    margin-top: 7%;
-    justify-content: center;
-    column-gap: 50px;
-    display: flex; /* Change inline-flex to flex */
-    flex-wrap: wrap;
-  }
-  .PlayerLobby {
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-  }
+.Select {
+  margin-top: 7%;
+  justify-content: center;
+  column-gap: 50px;
+  display: flex; /* Change inline-flex to flex */
+  flex-wrap: wrap;
+}
+.PlayerLobby {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
 
 .PlayerImage {
   display: flex;
@@ -323,10 +309,10 @@
   border-radius: 60px;
   border-color: white;
   border-width: 6px;
-  background-color: rgb(9, 66, 46);
+  background-color: rgb(193, 28, 28);
   background-image: url(/src/Image/pngtree-beowulf-clipart-cartoon-viking-cartoon-character-character-illustration-vector-png-image_6798546.png);
   background-position: center;
-  background-size: 150%;
+  background-size: 90%;
   background-repeat: no-repeat;
 }
 .PlayerImageMe {
@@ -340,13 +326,46 @@
   border-radius: 60px;
   border-color: rgb(157, 255, 0);
   border-width: 6px;
-  background-color: rgb(213, 1, 1);
+  background-color: rgb(9, 66, 46);
   background-image: url(/src/Image/pngtree-beowulf-clipart-cartoon-viking-cartoon-character-character-illustration-vector-png-image_6798546.png);
   background-position: center;
-  background-size: 120%;
+  background-size: 90%;
   background-repeat: no-repeat;
 }
-
+.SpecialImgMe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  height: 320px;
+  border: #000000 solid;
+  border-radius: 60px;
+  border-color: rgb(157, 255, 0);
+  border-width: 6px;
+  background-color: rgb(9, 66, 46);
+  background-image: url(/src/Image/master.png);
+  background-position: center;
+  background-size: 90%;
+  background-repeat: no-repeat;
+}
+.SpecialImgE {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  height: 320px;
+  border: #000000 solid;
+  border-radius: 60px;
+  border-color: rgb(140, 0, 255);
+  border-width: 6px;
+  background-color: rgb(37, 8, 53);
+  background-image: url(/src/Image/master.png);
+  background-position: center;
+  background-size: 90%;
+  background-repeat: no-repeat;
+}
 .StartGame {
   margin-top: 1%;
   display: flex;
@@ -800,7 +819,7 @@
   display: flex;
   flex-direction: column;
   padding: 10px;
-  padding-top:38px;
+  padding-top: 38px;
 
   top: 0;
   right: 0;
@@ -817,7 +836,7 @@
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-.PlayerStatusOP{
+.PlayerStatusOP {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -826,7 +845,7 @@
   color: #ffffff;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
-.PlayerStatusOP span{
+.PlayerStatusOP span {
   padding-right: 100px;
 }
 
@@ -873,15 +892,15 @@
   line-height: 22px;
 }
 
-.opponent-player{
-    background-image: url(Image/pngwing.com.png);
-    background-size: 25px; /* ปรับขนาดรูปตามต้องการ */
-    background-repeat: no-repeat;
-    background-position: left center;
-    padding-left: 35px; /* ปรับระยะห่างรูปกับข้อความ */
+.opponent-player {
+  background-image: url(Image/pngwing.com.png);
+  background-size: 25px; /* ปรับขนาดรูปตามต้องการ */
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-left: 35px; /* ปรับระยะห่างรูปกับข้อความ */
 }
 
-.PicSword image{
+.PicSword image {
   background-image: url(Image/sword.png);
   background-size: 16px; /* ปรับขนาดรูปตามต้องการ */
   background-repeat: no-repeat;
@@ -889,15 +908,15 @@
   padding-right: 30px; /* ปรับระยะห่างรูปกับข้อความ */
 }
 
-.PicCoin{
-    background-image: url(Image/coin.com.png);
-    background-size: 24px; /* ปรับขนาดรูปตามต้องการ */
-    background-repeat: no-repeat;
-    background-position: left center;
-    padding-left: 28px; /* ปรับระยะห่างรูปกับข้อความ */
+.PicCoin {
+  background-image: url(Image/coin.com.png);
+  background-size: 24px; /* ปรับขนาดรูปตามต้องการ */
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-left: 28px; /* ปรับระยะห่างรูปกับข้อความ */
 }
 
-.PicCity{
+.PicCity {
   background-image: url(Image/kisspng-pixel-art-portable-network-graphics-transparency-i-abigaelampaposs-gallery-5d3430c123fcb7.5463292415637014411474.png);
   background-size: 24px; /* ปรับขนาดรูปตามต้องการ */
   background-repeat: no-repeat;
@@ -905,7 +924,7 @@
   padding-left: 28px; /* ปรับระยะห่างรูปกับข้อความ */
 }
 
-.PicRegion{
+.PicRegion {
   background-image: url(Image/ai0.png);
   background-size: 20px; /* ปรับขนาดรูปตามต้องการ */
   background-repeat: no-repeat;
@@ -913,18 +932,18 @@
   padding-left: 28px; /* ปรับระยะห่างรูปกับข้อความ */
 }
 
-.MyTurn{
-  color:chartreuse;
+.MyTurn {
+  color: chartreuse;
 }
-.OtherTurn{
+.OtherTurn {
   color: goldenrod;
 }
 
-.Gamestate{
+.Gamestate {
   display: flex;
   align-items: center;
   padding-top: 10px;
   line-height: 15px;
   font-size: 13px;
-  color:rgb(188, 247, 255)
+  color: rgb(188, 247, 255);
 }
